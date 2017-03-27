@@ -1,9 +1,38 @@
 
 import $ from 'jquery';
+import angular from 'angular';
+import 'angular-ui-router';
+import 'angular-cookies';
+
+import AppConfig from './config';
+
+angular
+    .module('app', ['ui.router', 'ngCookies'])
+    .config(AppConfig)
+    .controller('signUpController', signUpController)
+    .controller('signInController', signInController);
 
 
 
 import { token } from "./token"
+
+
+import signUpController from './controllers/signup'
+import signInController from './controllers/signin'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

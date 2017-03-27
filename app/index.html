@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body ng-app="app">
       <nav class="nav has-shadow">
     <div class="container">
       <div class="nav-left">
@@ -35,13 +35,15 @@
           </figure>
           Profile
         </a>
-        <a class="nav-item is-tab">Sign Up</a>
-        <a class="nav-item is-tab">Sign In</a>
+        <a class="nav-item is-tab" href="#!/sign-up">Sign Up</a>
+        <a class="nav-item is-tab" href="#!/sign-in">Sign In</a>
 
         <input class="search" placeholder="Search"></input>
       </div>
     </div>
   </nav>
+  <div ui-view>
+  </div>
     <script src="js/bundle.js"></script>
   </body>
 </html>
