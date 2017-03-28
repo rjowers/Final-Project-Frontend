@@ -1,11 +1,11 @@
-import {SERVER} from "../server.js/"
-
 function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
+  console.log($cookies);
+
 $scope.signIn = (user) => {
     // console.log('from inside signin');
     // console.log(user);
     // console.log(SERVER);
-    $http.post(`http://obscure-eyrie-45843.herokuapp.com/login`, user).then(resp => {
+    $http.post(`${SERVER}/login`, user).then(resp => {
       console.log(user)
       $rootScope.loggedIn = true;
       console.log(resp.data);
@@ -19,5 +19,5 @@ $scope.signIn = (user) => {
   };
 };
 
-signInController.$inject = ['$scope', '$http', '$state', '$cookies', 'SERVER', '$rootScope']
+signInController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope']
   export default signInController;

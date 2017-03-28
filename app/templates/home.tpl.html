@@ -1,1 +1,13 @@
 <h1 class="has-text-centered header">Placeholder text with catchy phrase</h1>
+
+<div class="columns is-multiline">
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image" >
+      <a href="#!/photo/{{photo.id}}">
+        <figure class="image is-1by1">
+          <img class="image-main" ng-src="{{ photo.photo_url }}" alt="Image"
+          ng-mouseover="hover=true" ng-mouseleave="hover=false">
+        </figure>
+      </a>
+      </div>

@@ -1,5 +1,5 @@
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
@@ -7,6 +7,7 @@ import 'angular-cookies';
 import AppConfig from './config';
 import signUpController from './controllers/signup'
 import signInController from './controllers/signin'
+import HomeController from './controllers/signin'
 import SERVER from './server'
 import setup from './setup';
 
@@ -16,12 +17,13 @@ angular
     .constant ('SERVER', SERVER)
     .run(setup)
     .controller('signUpController', signUpController)
-    .controller('signInController', signInController);
-
+    .controller('signInController', signInController)
+    .controller('HomeController', HomeController);
 
 
 import { token } from "./token"
 
+// $http instead of $.ajax
 
 
 
@@ -40,7 +42,6 @@ import { token } from "./token"
 
 
 
-//
 //  var info = [];
 //  var i = 1
 //
@@ -90,7 +91,7 @@ import { token } from "./token"
 // }
 //
 // console.log(info)
-//
+// $rootScope.info = info;
 // }
 //
 //
