@@ -3,19 +3,16 @@
     <div class="column signup-form">
         <h4>Sign In</h4>
 
-        <form ng-submit="signUp(user)">
+        <form ng-submit="signIn(user)">
 
-            <p class="control">
-                <input type="text" placeholder="Username"
-                       ng-model="user.username" />
-            </p>
+
             <p class="control">
                 <input type="text" placeholder="Email"
                        ng-model="user.email" />
             </p>
             <p class="control">
                 <input type="password" placeholder="Password"
-                       ng-model="user.password" />
+                       ng-model="user.hashedPassword" />
             </p>
             <p class="control">
                 <button class="button is-primary create-account">Sign In</button>

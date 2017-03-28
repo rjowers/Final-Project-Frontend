@@ -1,6 +1,9 @@
 @import "bulma";
 
-
+html{
+  background-color: #2e2e2e
+  // background-color: #222222;
+}
 .container {
   height: 100px;
 }
@@ -13,6 +16,11 @@
 
 }
 
+.nav{
+  // background-color: #2e2e2e;
+
+  background-color: #222222;
+}
 
 
 ////////Sign Up Page//////////////////
@@ -32,9 +40,22 @@ input{
   width: 500px;
 }
 
+
+
 .create-account{
+  // background-color: #FF2450;
   margin-top: 20px;
 }
 
 
 ///////Sign In Page/////////
+
+
+
+
+///////Home Page////////////
+
+.header {
+  font-size: 80px;
+  margin-top: 40px;
+}

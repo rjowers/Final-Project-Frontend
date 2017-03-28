@@ -1,6 +1,11 @@
 function Config ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+        .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.tpl.html',
+        controller: 'HomeController'
+      })
         // .state('root', {
         //   abstract: true,
         //   templateUrl: 'templates/layout.tpl.html',
@@ -8,12 +13,12 @@ function Config ($stateProvider, $urlRouterProvider) {
         // });
         .state('sign-up', {
           url: '/sign-up',
-          // controller: 'UserController',
+          controller: 'signUpController',
           templateUrl: 'templates/sign-up.tpl.html'
         })
         .state('sign-in', {
           url: '/sign-in',
-          // controller: 'UserController',
+          controller: 'signInController',
           templateUrl: 'templates/sign-in.tpl.html'
         });
         // .state('root.home', {

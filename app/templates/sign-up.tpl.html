@@ -4,10 +4,21 @@
         <h4>Sign Up</h4>
 
         <form ng-submit="signUp(user)">
-
+          <p class="control">
+              <input type="text" placeholder="First Name"
+                     ng-model="user.firstname" />
+          </p>
+          <p class="control">
+              <input type="text" placeholder="Last Name"
+                     ng-model="user.lastname" />
+          </p>
+          <p class="control">
+              <input type="text" placeholder="City"
+                     ng-model="user.city" />
+          </p>
             <p class="control">
                 <input type="text" placeholder="Username"
-                       ng-model="user.username" />
+                       ng-model="user.userName" />
             </p>
             <p class="control">
                 <input type="text" placeholder="Email"
@@ -15,10 +26,10 @@
             </p>
             <p class="control">
                 <input type="password" placeholder="Password"
-                       ng-model="user.password" />
+                       ng-model="user.hashedPassword" />
             </p>
             <p class="control">
-                <button class="button is-primary create-account">Create My Account</button>
+                <button  class="button is-primary create-account">Create My Account</button>
             </p>
         </form>
     </div>
