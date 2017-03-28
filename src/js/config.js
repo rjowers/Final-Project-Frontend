@@ -20,7 +20,13 @@ function Config ($stateProvider, $urlRouterProvider) {
           url: '/sign-in',
           controller: 'signInController',
           templateUrl: 'templates/sign-in.tpl.html'
+        })
+        .state('show', {
+          url: '/show',
+          controller: 'ShowController',
+          templateUrl: 'templates/show.tpl.html'
         });
+
         // .state('root.home', {
         //   url: '/home',
         //   templateUrl: 'templates/photo-list.tpl.html',
