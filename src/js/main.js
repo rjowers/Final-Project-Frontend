@@ -5,10 +5,11 @@ import 'angular-ui-router';
 import 'angular-cookies';
 
 import AppConfig from './config';
-import signUpController from './controllers/signup'
-import signInController from './controllers/signin'
-import HomeController from './controllers/home'
-import SERVER from './server'
+import signUpController from './controllers/signup';
+import signInController from './controllers/signin';
+import HomeController from './controllers/home';
+import ShowController from './controllers/show';
+import SERVER from './server';
 import setup from './setup';
 
 import AccountService from './services/account';
@@ -21,7 +22,8 @@ angular
     .run(setup)
     .controller('signUpController', signUpController)
     .controller('signInController', signInController)
-    .controller('HomeController', HomeController);
+    .controller('HomeController', HomeController)
+    .controller('ShowController', ShowController)
 
 
 import { token } from "./token";
