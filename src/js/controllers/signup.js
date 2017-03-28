@@ -1,4 +1,3 @@
-import {SERVER} from "../server.js/"
 
 function signUpController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
 
