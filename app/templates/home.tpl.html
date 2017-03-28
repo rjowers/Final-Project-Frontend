@@ -1,13 +1,39 @@
 <h1 class="has-text-centered header">Placeholder text with catchy phrase</h1>
 
-<div class="columns is-multiline">
-  <div class="column is-one-quarter">
+
+<div class="columns is-multiline is-gapless main-content">
+  <div class="column is-one-quarter" ng-repeat="photo in photos">
     <div class="card">
       <div class="card-image" >
       <a href="#!/photo/{{photo.id}}">
         <figure class="image is-1by1">
-          <img class="image-main" ng-src="{{ photo.photo_url }}" alt="Image"
+          <img class="image-main" ng-src="http://image.tmdb.org/t/p/w185//{{posterPhotos}}" alt="Image"
           ng-mouseover="hover=true" ng-mouseleave="hover=false">
         </figure>
       </a>
+      <a href="#!/user/{{ photo.user_id }}" ng-mouseover="hover=true">
+        <div class="username-hover title is-2" ng-show="hover"> {{photo.user.username}}</div>
+      </a>
       </div>
+      <!-- <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <a href="#!/user/{{ photo.user_id }}">
+              <p class="title.is-1"> {{ photo.user.username }} </p>
+            </a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+<!-- <img src="http://image.tmdb.org/t/p/w185//{{posterPhotos}}" alt=""> -->
+
+
+<!-- $rootScope.info -->

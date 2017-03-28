@@ -10,6 +10,7 @@ var pageNum = 1;
     console.log(resp.data.results)
     $rootScope.info = resp.data.results
     console.log($rootScope.info)
+    $scope.posterPhotos = $rootScope.info[0].poster_path
   }
 )}
 putMovies()
@@ -20,3 +21,5 @@ HomeController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$r
 export default HomeController;
 
 //https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}
+
+// $rootScope.info
