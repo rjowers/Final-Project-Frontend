@@ -7,13 +7,16 @@ import 'angular-cookies';
 import AppConfig from './config';
 import signUpController from './controllers/signup'
 import signInController from './controllers/signin'
-import HomeController from './controllers/signin'
+import HomeController from './controllers/home'
 import SERVER from './server'
 import setup from './setup';
+
+import AccountService from './services/account';
 
 angular
     .module('app', ['ui.router', 'ngCookies'])
     .config(AppConfig)
+    .service('AccountService', AccountService)
     .constant ('SERVER', SERVER)
     .run(setup)
     .controller('signUpController', signUpController)
@@ -21,7 +24,7 @@ angular
     .controller('HomeController', HomeController);
 
 
-import { token } from "./token"
+import { token } from "./token";
 
 // $http instead of $.ajax
 

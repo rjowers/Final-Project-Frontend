@@ -1,11 +1,17 @@
 
-function signUpController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
+
+function signUpController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
+
+// let vm = this;
+//
+// vm.signUp = signUp;
 
   $scope.signUp = (user) => {
     // console.log(SERVER);
 
     console.log(user);
-    $http.post(`${SERVER}/users`, user).then(resp => {
+   AccountService.signup(user).then(resp => {
+
       // console.log(resp);
       console.log('user created');
     }).catch(error => {
@@ -14,6 +20,6 @@ function signUpController ($scope, $http, SERVER, $state, $cookies, $rootScope) 
   };
 };
 
-  signUpController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];
+  signUpController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService'];
 
   export default signUpController;

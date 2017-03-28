@@ -4,7 +4,7 @@ function setup ($rootScope, $cookies, $http) {
 
   if (token) {
     $rootScope.loggedIn = true;
-    $http.defaults.headers.common['access-token'] = token;
+    // $http.defaults.headers.common['access-token'] = token;
   }
 
 }

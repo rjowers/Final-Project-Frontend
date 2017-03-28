@@ -9,7 +9,7 @@ html{
 }
 .search{
   border-radius: 25px;
-  margin-top: 20px;
+  margin-top: 34px;
   margin-left: 12px;
   height: 30px;
   width: 200px;
@@ -20,8 +20,19 @@ html{
   // background-color: #2e2e2e;
 
   background-color: #222222;
+
+}
+.nav-right {
+a {
+font-size: 24px;
+}
 }
 
+.nav-left {
+a {
+font-size: 24px;
+}
+}
 
 ////////Sign Up Page//////////////////
 

@@ -1,5 +1,5 @@
 function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
-  console.log($cookies);
+  // console.log($cookies);
 
 $scope.signIn = (user) => {
     // console.log('from inside signin');
@@ -11,7 +11,7 @@ $scope.signIn = (user) => {
       console.log(resp.data);
       $cookies.put('access-token', resp.data.token);
       // $cookies.put('user-id', resp.data.user.id);
-      $http.defaults.headers.common['access-token'] = resp.data.token;
+      // $http.defaults.headers.common['access-token'] = resp.data.token;
       $state.go('/home');
     }).catch(error => {
         console.log(error);
