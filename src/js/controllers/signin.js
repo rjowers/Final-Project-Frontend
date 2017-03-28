@@ -1,11 +1,13 @@
-function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
+function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
   // console.log($cookies);
 
 $scope.signIn = (user) => {
     // console.log('from inside signin');
     // console.log(user);
     // console.log(SERVER);
-    $http.post(`${SERVER}/login`, user).then(resp => {
+AccountService.login(user).then(resp => {
+  // $http.post(`${SERVER}/login`, user).then(resp => {
+
       console.log(user)
       $rootScope.loggedIn = true;
       console.log(resp.data);
@@ -19,5 +21,5 @@ $scope.signIn = (user) => {
   };
 };
 
-signInController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope']
+signInController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService']
   export default signInController;

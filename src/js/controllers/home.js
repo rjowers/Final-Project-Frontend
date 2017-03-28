@@ -5,10 +5,11 @@ function HomeController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
 
 function putMovies () {
 var pageNum = 1;
-console.log("inside function")
   $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}`)
   .then ( resp => {
-    console.log(resp)
+    console.log(resp.data.results)
+    $rootScope.info = resp.data.results
+    console.log($rootScope.info)
   }
 )}
 putMovies()
