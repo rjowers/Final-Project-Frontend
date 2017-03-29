@@ -5,7 +5,7 @@ function HomeController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
 
 function putMovies () {
 var pageNum = 1;
-  $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum.length}`)
+  $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}`)
   .then ( resp => {
     // console.log(resp.data.results)
     $rootScope.info = resp.data.results
@@ -20,10 +20,15 @@ var pageNum = 1;
     // // console.log($scope.backgroundPhotos.backdrop_path)
     // $scope.fullUrl ="http://image.tmdb.org/t/p/w600//" + $rootScope.info[item].backdrop_path;
     // console.log($scope.fullUrl)
-
   }
 )}
 putMovies()
+
+$scope.clickShow = function (click){
+  // console.log(click)
+  $cookies.put('clickedPhoto', click)
+  $state.go('show');
+}
 };
 
 HomeController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope']
