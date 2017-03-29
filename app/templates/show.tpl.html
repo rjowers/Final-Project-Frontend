@@ -1,1 +1,13 @@
-<div>Hello</div>
+<div class="show-background" ng-style="{'background-image':'url({{fullUrl}})'}">
+</div>
+
+<div class="show-poster">
+  <img class="inline" ng-src="http://image.tmdb.org/t/p/w130/{{info.poster_path}}">
+  <div class="inline show-box">
+    <div class="show-title">{{info.name}}</div>
+    <div class="description">{{info.overview}}</div>
+  </div>
+</div>
+
+<div class="show-reviews">Reviews
+<div>

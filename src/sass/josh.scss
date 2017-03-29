@@ -1,0 +1,57 @@
+//////// Show page ////////////////////
+
+// * {
+//   border: 1px dotted red;
+// }
+
+.show-background {
+  height: 480px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  // -moz-box-shadow:    inset 0px 0px 82px -6px #000000;
+  // -webkit-box-shadow: inset 0px 0px 82px -6px #000000;
+  // box-shadow:         inset 0px 0px 82px -6px #000000;
+}
+
+
+.show-poster {
+  margin-top: 15px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.show-box {
+  vertical-align: top;
+  width: 50%;
+  margin-left: 5%;
+}
+
+.show-title {
+  color: white;
+  font-size: 40px;
+  vertical-align: top;
+}
+
+.show-description {
+  color: white;
+  font-size: 16px;
+}
+
+.inline {
+  display:inline-block;
+}
+
+.show-reviews{
+  margin-top: 15px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
