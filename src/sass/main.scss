@@ -5,7 +5,7 @@ html{
   // background-color: #222222;
 }
 .container {
-  height: 100px;
+  // height: 100px;
 }
 .search{
   border-radius: 25px;
@@ -24,13 +24,13 @@ html{
 }
 .nav-right {
 a {
-font-size: 24px;
+// font-size: 24px;
 }
 }
 
 .nav-left {
 a {
-font-size: 24px;
+// font-size: 24px;
 }
 }
 
@@ -69,4 +69,25 @@ input{
 .header {
   font-size: 80px;
   margin-top: 40px;
+  color: white;
+}
+
+.poster-photos {
+  height: 226px;
+  width: 149px;
+}
+
+
+.photo-columns {
+  // margin-top: 200px;
+}
+.poster-images{
+  height: 226px;
+  width: 149px;
+  transition: border .1s linear;
+border: 1px solid #81878E;
+}
+
+.main-content {
+  margin-top: 205px;
 }

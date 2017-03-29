@@ -10,7 +10,7 @@ var pageNum = 1;
     console.log(resp.data.results)
     $rootScope.info = resp.data.results
     console.log($rootScope.info)
-    $scope.posterPhotos = $rootScope.info[0].poster_path
+    $scope.posterPhotos = $rootScope.info
   }
 )}
 putMovies()

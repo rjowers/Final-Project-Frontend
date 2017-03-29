@@ -1,7 +1,7 @@
 
 
 function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
-  console.log($rootScope.info)
+  console.log($rootScope.shows)
 }
 
 ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];

@@ -1,13 +1,13 @@
 <h1 class="has-text-centered header">Placeholder text with catchy phrase</h1>
 
 
-<div class="columns is-multiline is-gapless main-content">
-  <div class="column is-one-quarter" ng-repeat="photo in photos">
-    <div class="card">
+<div class="columns is-multiline main-content">
+  <div class="column is-2 is-one-quarter photo-columns" ng-repeat="photo in posterPhotos">
+    <div class="card poster-photos">
       <div class="card-image" >
       <a href="#!/photo/{{photo.id}}">
-        <figure class="image is-1by1">
-          <img class="image-main" ng-src="http://image.tmdb.org/t/p/w185//{{posterPhotos}}" alt="Image"
+        <figure class="image is-1by1 poster-images">
+          <img class="image-main" ng-src="http://image.tmdb.org/t/p/w185//{{photo.poster_path}}"  alt="Image"
           ng-mouseover="hover=true" ng-mouseleave="hover=false">
         </figure>
       </a>
