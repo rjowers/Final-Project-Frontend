@@ -2,7 +2,7 @@
 @import "josh";
 
 html{
-  background-color: #2e2e2e
+  background-color: #151515
   // background-color: #222222;
 }
 .container {
@@ -73,22 +73,129 @@ input{
   color: white;
 }
 
-.poster-photos {
-  height: 226px;
-  width: 149px;
-}
+
 
 
 .photo-columns {
-  // margin-top: 200px;
+// margin-left: 40px;
+
+
+}
+.poster-images:hover {
+      border: 2px solid #72d147;
+      // transition:height, width, border .1s linear;
+
 }
 .poster-images{
   height: 226px;
   width: 149px;
   transition: border .1s linear;
-border: 1px solid #81878E;
+  border: 1px solid #81878E;
+//   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+// -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+// -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+// animation-name: example;
+// animation-duration: 4s;
+// animation-delay: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+
+.catchphrase{
+  position: relative;
+  z-index: 2;
+
+  bottom: 370px;
+  text-align: center;
+  font-size: 42px;
+  position: inline;
+  color: white;
+  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+  word-spacing: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .main-content {
-  margin-top: 205px;
+  position: relative;
+  right: 1300px;
+  margin-top: -80px;
+  // margin-left: 40px;
+
+  // margin-right;
+
+}
+
+@-webkit-keyframes example {
+    0%   { left:0px;}
+    100%  { left:1315px; }
+
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   { left:0px; }
+    100%  { left:1315px; }
+
+}
+
+.poster-photos {
+  height: 226px;
+  width: 149px;
+  margin-top: 25px;
+  bottom: 330px;
+    -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+
+
+
+  // -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+  animation-fill-mode: forwards;
+  animation-name: example;
+  animation-duration: 2s;
+  // animation-iteration-count: 3;
+
+
+  // animation-delay: 0s;
+}
+
+
+
+//   @mixin aspect-ratio($width, $height) {
+//   position: relative;
+//   &:before {
+//     display: block;
+//     content: "";
+//     width: 100%;
+//     // height: 200px;
+//     padding-top: ($height / $width) * 100%;
+//   }
+//   > .landing {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     height: 200px;
+//   }
+// }
+
+.landing-container{
+
+}
+
+
+img.landing {
+  margin-top: 0px;
+  opacity: .7;
+  // position: absolute;
+  //
+  // clip: rect(0px,60px,800px,0px);
+  // width: 500px;
+  //
+  // height: 360px;
+  // object-fit: none;
 }
