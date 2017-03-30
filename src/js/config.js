@@ -25,6 +25,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           url: '/show',
           controller: 'ShowController',
           templateUrl: 'templates/show.tpl.html'
+        })
+        .state('profile-page', {
+          url: '/profile-page',
+          controller: 'ProfilePageController',
+          templateUrl: 'templates/profile-page.tpl.html'
         });
 
         // .state('root.home', {
