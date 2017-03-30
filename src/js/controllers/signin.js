@@ -14,7 +14,7 @@ AccountService.login(user).then(resp => {
       $cookies.put('access-token', resp.data.token);
       // $cookies.put('user-id', resp.data.user.id);
       // $http.defaults.headers.common['access-token'] = resp.data.token;
-      $state.go('/home');
+      $state.go('home');
     }).catch(error => {
         console.log(error);
     });
