@@ -1,6 +1,6 @@
 
 
-function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
+function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
   function getMovie () {
     for(var count = 0; count < $rootScope.shows.length; count++){
 
@@ -27,15 +27,34 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
   $scope.enter = function (data) {
     console.log(data)
     $scope.modalToggle = "";
-    var url = `${SERVER}/userShows`;
-    // $http.post(url, data).then(resp => {
-    //   $state.go('login');
-    //});
+    //var url = `${SERVER}/userShows`;
+    // data.text
+    // data.rating
+
+    var array = data.rating.split(" ")
+    var ratingNumber = parseInt(array[0])
+    // var review = {
+    //   text: data.text,
+    //   rating: ratingNumber
+    // }
+
+    var showInfo = {
+      showId: $cookies.get('clickedPhoto'),
+      showName: $rootScope.shows[chosenShow].name,
+      seenIt: true
+    }
+
+
+    AccountService.addReview(showInfo).then(resp => {
+
+        }).catch(error => {
+            console.log(error);
+      });
   };
 
 }
 
-ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];
+ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService'];
 
 export default ShowController;
 
