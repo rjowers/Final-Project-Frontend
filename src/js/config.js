@@ -26,6 +26,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           controller: 'ShowController',
           templateUrl: 'templates/show.tpl.html'
         });
+        // .state('reviews', {
+        //   url: '/reviews',
+        //   controller:
+        // });
+
 
         // .state('root.home', {
         //   url: '/home',

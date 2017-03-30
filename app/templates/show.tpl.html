@@ -7,6 +7,62 @@
     <div class="show-title">{{info.name}}</div>
     <div class="description">{{info.overview}}</div>
   </div>
+  <div class="review-link inline" ng-click="modal()">Click here<br>to review</div>
+
+  <div class="modal" ng-class="modalToggle">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+
+
+
+
+
+   <form ng-submit="enter(review)">
+
+     <div class="field">
+       <label class="label">Rate this show.</label>
+       <p class="control">
+         <span class="select">
+           <select ng-model="review.rating">
+             <option>1 star</option>
+             <option>2 stars</option>
+             <option>3 stars</option>
+             <option>4 stars</option>
+             <option>5 stars</option>
+           </select>
+         </span>
+       </p>
+     </div>
+
+
+
+
+
+      <div class="field">
+        <label class="label">Write your review.</label>
+        <p class="control">
+          <textarea class="textarea" placeholder="Write a super review here!" ng-model="review.text"></textarea>
+        </p>
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button class="button is-primary">Submit</button>
+        </p>
+      </div>
+    </form>
+
+
+
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button class="modal-close" ng-click="close()"></button>
+  </div>
+
+<!-- /// made a state that you connected ahref tag
+// ngclick ran deactiavte  in the model state close deactivie yoiu have go -->
+
+
 </div>
 
 <div class="show-reviews">Reviews
