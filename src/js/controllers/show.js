@@ -14,6 +14,15 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
   $scope.info = $rootScope.shows[chosenShow];
   $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
   //console.log($scope.fullUrl)
+
+
+  $scope.modal = function (){
+    $scope.test = "is-active";
+  }
+
+  $scope.close = function (){
+    $scope.test = "";
+  }
 }
 
 ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];
