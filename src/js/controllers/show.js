@@ -25,17 +25,17 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   }
 
   $scope.enter = function (data) {
-    console.log(data)
+    //console.log(data)
     $scope.modalToggle = "";
     //var url = `${SERVER}/userShows`;
     // data.text
     // data.rating
-
+    console.log($cookies.get('clickedPhoto'))
     var array = data.rating.split(" ")
     var ratingNumber = parseInt(array[0])
     var reviewInfo = {
       review: data.text,
-      rating: ratingNumber,
+      ranking: ratingNumber,
       showId: $cookies.get('clickedPhoto'),
       showName: $rootScope.shows[chosenShow].name,
       seenIt: true
