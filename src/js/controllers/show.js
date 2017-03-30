@@ -33,23 +33,27 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
     var array = data.rating.split(" ")
     var ratingNumber = parseInt(array[0])
-    // var review = {
-    //   text: data.text,
-    //   rating: ratingNumber
-    // }
-
-    var showInfo = {
+    var reviewInfo = {
+      review: data.text,
+      rating: ratingNumber,
       showId: $cookies.get('clickedPhoto'),
       showName: $rootScope.shows[chosenShow].name,
       seenIt: true
     }
 
 
-    AccountService.addReview(showInfo).then(resp => {
+    AccountService.addReview(reviewInfo).then(resp => {
 
         }).catch(error => {
             console.log(error);
       });
+
+    // AccountService.addReview2(reviewInfo).then(resp => {
+    //
+    //     }).catch(error => {
+    //         console.log(error);
+    //   });
+
   };
 
 }
