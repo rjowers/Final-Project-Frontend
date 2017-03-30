@@ -4,6 +4,7 @@ let service = this;
 
 service.signup = signup;
 service.login = login;
+service.addReview = addReview;
 // service.seenit = seenit;
 // service.getshow = getshow;
 // service.postreview = postreview;
@@ -13,17 +14,17 @@ service.login = login;
 
 function signup (user) {
   return $http.post (`${SERVER}/users`, user);
-};
+}
 
 function login (user) {
   return $http.post (`${SERVER}/login`, user);
-};
+}
 
 
 function addReview (data) {
-  return $http.post(`${SERVER}/reviews`, data, {
+  return $http.post(`${SERVER}/userShows`, data, {
     headers: getHeader()
-  })
+  });
 }
 
 // function signup (user) {
