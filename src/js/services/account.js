@@ -20,6 +20,12 @@ function login (user) {
 };
 
 
+function addReview (data) {
+  return $http.post(`${SERVER}/reviews`, data, {
+    headers: getHeader()
+  })
+}
+
 // function signup (user) {
 //   return $http.post (`${SERVER}/users`, {
 //     headers: getHeader()

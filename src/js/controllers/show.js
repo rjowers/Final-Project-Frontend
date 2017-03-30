@@ -17,12 +17,22 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
 
 
   $scope.modal = function (){
-    $scope.test = "is-active";
+    $scope.modalToggle = "is-active";
   }
 
   $scope.close = function (){
-    $scope.test = "";
+    $scope.modalToggle = "";
   }
+
+  $scope.enter = function (data) {
+    console.log(data)
+    $scope.modalToggle = "";
+    var url = `${SERVER}/userShows`;
+    // $http.post(url, data).then(resp => {
+    //   $state.go('login');
+    //});
+  };
+
 }
 
 ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];
