@@ -30,6 +30,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           url: '/profile-page',
           controller: 'ProfilePageController',
           templateUrl: 'templates/profile-page.tpl.html'
+        })
+        .state('user-profile', {
+          url: '/user-profile',
+          controller: 'UserProfileController',
+          templateUrl: 'templates/user-profile.tpl.html'
         });
         // .state('reviews', {
         //   url: '/reviews',
