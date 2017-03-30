@@ -219,3 +219,94 @@ img.landing {
   // height: 360px;
   // object-fit: none;
 }
+
+
+//////////Profile Page///////
+
+.profile-background {
+  height: 500px;
+  width: 100%;
+}
+
+.username {
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  bottom: 100px;
+  color: white;
+}
+
+.pic-container {
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+margin-left: 38%;
+bottom: 400px;
+// margin-top:
+ // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+.profile-pic {
+  // display: flex;
+  // align-self: center;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+// div.show-pic-container{
+// }
+.show-pic-container{
+  height: 226px;
+  width: 149px;
+  margin-left: 50px;
+  margin-right: 0px;
+  display: inline-block;
+
+}
+.review-container{
+  // border-bottom: 1px solid #456;
+  margin-top: 0px;
+  position: relative;
+  bottom: 300px;
+}
+.words-container{
+  display: inline-block;
+  float: right;
+  margin-right: 90px;
+  width: 936px;
+  height: 250px;
+  color: #99AABB;
+
+}
+.review-title{
+  font-size: 30px;
+  position: relative;
+  bottom: 15px;
+}
+.review{
+  width: 936px;
+  height: 150px;
+  overflow: hidden;
+
+
+}
+
+.comments-container {
+  display: flex;
+  justify-content: flex-end;
+width: 100%;
+}
+.comments {
+  margin-right: 100px;
+
+}
+hr{
+  color: #456;
+  border: none;
+  height: .5px;
+  width: 95%;
+  position: relative;
+  left: 2%;
+}
