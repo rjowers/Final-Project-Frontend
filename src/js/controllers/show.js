@@ -1,9 +1,19 @@
 
 
 function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope) {
-  $scope.info = $rootScope.shows[0];
-  $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[0].backdrop_path;
-  console.log($scope.fullUrl)
+  function getMovie () {
+    for(var count = 0; count < $rootScope.shows.length; count++){
+
+      if($rootScope.shows[count].id == $cookies.get('clickedPhoto')){
+        return count;
+      }
+    }
+  }
+  var chosenShow = getMovie();
+
+  $scope.info = $rootScope.shows[chosenShow];
+  $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
+  //console.log($scope.fullUrl)
 }
 
 ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope'];
