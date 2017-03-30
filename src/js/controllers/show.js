@@ -15,6 +15,14 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
   //console.log($scope.fullUrl)
 
+  $http.get(`${SERVER}/showreviews/${$cookies.get('clickedPhoto')}`).then(resp => {
+      console.log(resp.data)
+      //console.log(resp.data[0].review)
+      $scope.test2 = resp.data;
+    });
+
+  //console.log($scope.test2)
+
 
   $scope.modal = function (){
     $scope.modalToggle = "is-active";
@@ -48,12 +56,11 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
             console.log(error);
       });
 
-    // AccountService.addReview2(reviewInfo).then(resp => {
+    // AccountService.getReviewsShow().then(resp => {
     //
     //     }).catch(error => {
     //         console.log(error);
     //   });
-
   };
 
 }
