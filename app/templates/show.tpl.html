@@ -60,6 +60,7 @@
 <div class="show-reviews">Reviews
 </div>
 
+
 <div ng-repeat="review in test2">
-  {{review.review}}
+  <img class="review-image inline" ng-src="{{review.User.profileUrl}}">{{review.review}}
 </div>
