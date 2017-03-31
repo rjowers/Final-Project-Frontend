@@ -44,9 +44,6 @@
       </div>
     </form>
 
-
-
-      <!-- Any other Bulma elements you want -->
     </div>
     <button class="modal-close" ng-click="close()"></button>
   </div>
@@ -54,13 +51,13 @@
 <!-- /// made a state that you connected ahref tag
 // ngclick ran deactiavte  in the model state close deactivie yoiu have go -->
 
-
 </div>
+
 
 <div class="show-reviews">Reviews
-</div>
 
+  <div ng-repeat="review in test2" class="review-text">
+    <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="{{review.User.userName}}">{{review.review}}
+  </div>
 
-<div ng-repeat="review in test2">
-  <img class="review-image inline" ng-src="{{review.User.profileUrl}}">{{review.review}}
 </div>
