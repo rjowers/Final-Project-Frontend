@@ -17,7 +17,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
   $http.get(`${SERVER}/showreviews/${$cookies.get('clickedPhoto')}`).then(resp => {
       console.log(resp.data)
-      console.log(resp.data[5].User.profileUrl)
+      //console.log(resp.data[5].User.profileUrl)
       //console.log(resp.data[0].review)
       $scope.test2 = resp.data;
     });

@@ -17,20 +17,23 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
 
-  $scope.addProfilepic = (info) => {
-var pic = {
-  profileUrl: info,
-}
+  $scope.addProfilepic = function (info) {
+    console.log(info)
+    // var pic = {
+    //   profileUrl: info,
+    // };
+
+    console.log(AccountService.updateUser(info));
+
+
     AccountService.updateUser(info).then(resp => {
 
-           }).then( $state.reload())
-           .catch(error => {
+
+          }).catch(error => {
              console.log(error);
          });
 
-
   };
-
 
 
   $scope.toggle = function() {

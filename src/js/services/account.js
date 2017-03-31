@@ -36,7 +36,7 @@ function getReviewsShow (user) {
 
 function updateUser (data){
   return $http.put(`${SERVER}/updateuser`, data, {
-    header: getHeader()
+    headers: getHeader()
   });
 }
 // function addReview2 (data) {
