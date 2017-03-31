@@ -2,10 +2,58 @@
 <img class ="profile-background" src="http://wallpapercave.com/wp/mlGFLlB.jpg">
 <p class="username">Ryan Jowers</p>
 </div>
+
+
+
+
+
+
+
+
 <figure class="image pic-container">
-  <img class="profile-pic" src="http://www.iymphysiotherapy.com.au/wp-content/uploads/2016/04/Profile-960x750.jpg">
+  <img class="profile-pic" src="../images/Default-Profile.jpg">
+  <!-- <a class="change" href=""> Change Image</a> -->
 </figure>
 
+
+
+  <div class ="profile">
+
+    <a class="addphoto" ng-click="toggle()" aria-label"Toggle ngHide">Add Image</a>
+  </div>
+
+
+
+    <div class =" addprofile" ng-show="myVar">
+    <!-- <div class =" addprofile" > --> <!--  User this to see form without toggle  -->
+
+      <div class="columns form-container">
+          <div class="column"></div>
+          <div class="column ">
+            <form ng-submit="addProfilepic(profile)">
+              <p class="control">
+                  <input type="text" placeholder="http://awesomephoto"
+                       ng-model="profile.profilephoto" />
+              </p>
+
+              <p class="control">
+                  <a class="add-picture">Add It!</button>
+              </p>
+            </form>
+          </div>
+          <div class="column"></div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+  <!-- </div> -->
+
+
+
+
+
+
+<!--
 <div class="columns feed-followers-container">
   <div class="column is-one-third feed">
     <h1>Feed</h1>
@@ -37,4 +85,4 @@
         <p class="more">More</p>
   </div>
 
-</div>
+</div> -->
