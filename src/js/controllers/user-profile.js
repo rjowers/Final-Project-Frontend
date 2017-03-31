@@ -1,4 +1,4 @@
-function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateParams) {
+function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateParams, AccountService) {
 
   $scope.photos = [];
   $scope.myVar  = false;
@@ -18,13 +18,19 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
   $scope.addProfilepic = (info) => {
+var pic = {
+  profileUrl: info,
+}
+    AccountService.updateUser(info).then(resp => {
 
-    $http.put(`${SERVER}/update/${$stateParams.userid}`, info)
-    .then( $state.reload())
-    .catch(error => {
-      console.log(error);
-    });
+           }).then( $state.reload())
+           .catch(error => {
+             console.log(error);
+         });
+
+
   };
+
 
 
   $scope.toggle = function() {
@@ -34,10 +40,12 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
     }
   };
 
+
+
 }
 
 
 
-UserProfileController.$inject = ['$cookies','$scope', '$http', 'SERVER', '$state', '$stateParams'];
+UserProfileController.$inject = ['$cookies','$scope', '$http', 'SERVER', '$state', '$stateParams', 'AccountService'];
 
 export default UserProfileController;

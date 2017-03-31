@@ -6,6 +6,7 @@ service.signup = signup;
 service.login = login;
 service.addReview = addReview;
 service.getReviewsShow = getReviewsShow;
+service.updateUser = updateUser;
 //service.addReview2 = addReview2;
 // service.seenit = seenit;
 // service.getshow = getshow;
@@ -33,6 +34,11 @@ function getReviewsShow (user) {
   return $http.get (`${SERVER}/reviews`, user);
 }
 
+function updateUser (data){
+  return $http.put(`${SERVER}/updateuser`, data, {
+    header: getHeader()
+  });
+}
 // function addReview2 (data) {
 //   return $http.post(`${SERVER}/reviews`, data, {
 //     headers: getHeader()
