@@ -9,6 +9,7 @@ import signUpController from './controllers/signup';
 import signInController from './controllers/signin';
 import HomeController from './controllers/home';
 import ShowController from './controllers/show';
+import UserProfileController from './controllers/user-profile.js';
 import SERVER from './server';
 import setup from './setup';
 
@@ -24,6 +25,7 @@ angular
     .controller('signInController', signInController)
     .controller('HomeController', HomeController)
     .controller('ShowController', ShowController)
+    .controller('UserProfileController', UserProfileController)
 
 
 import { token } from "./token";

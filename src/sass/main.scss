@@ -339,11 +339,45 @@ hr{
 
 //////user-profile////////
 
+
+
+.addphoto{
+  position: relative;
+  bottom: 270px;
+  left: 190px;
+  color: black;
+}
+
+.addprofile {
+
+position: relative;
+bottom: 300px;
+margin-left: 8%;
+
+.form-container{
+  width: 0px;
+
+}
+
+input{
+  width: 200px;
+  height: 30px;
+  border-radius: 25px;
+}
+.add-picture{
+  display: inline-block;
+  float: right;
+}
+
+}
+
 .feed-followers-container{
   position: relative;
   bottom: 300px
 
 }
+
+
 .feed{
   height: 400px;
   // width:300px;
