@@ -18,21 +18,10 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
   $scope.addProfilepic = function (info) {
-    console.log(info)
-    // var pic = {
-    //   profileUrl: info,
-    // };
-
-    console.log(AccountService.updateUser(info));
-
-
     AccountService.updateUser(info).then(resp => {
-
-
           }).catch(error => {
              console.log(error);
-         });
-
+          });
   };
 
 
