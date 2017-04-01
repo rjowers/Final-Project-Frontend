@@ -9,6 +9,35 @@
   <div class="review-title">{{myReviews[0].User.userName}}'s Reviews</div>
   <div class="ind-review-box" ng-repeat="review in myReviews">
      <div class="inline ind-review-text">{{review.review}}</div>
-     <div class="inline ind-review-comment">Comment on this review</div>
+     <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
   </div>
+</div>
+
+
+<div class="modal" ng-class="modalToggle">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+
+    <form ng-submit="enter(text)">
+
+
+       <div class="field">
+         <label class="label">Write your comment.</label>
+         <p class="control">
+           <textarea class="textarea" placeholder="Write a super comment here!" ng-model="text.comment"></textarea>
+         </p>
+       </div>
+
+       <div class="field is-grouped">
+         <p class="control">
+           <button class="button is-primary">Submit</button>
+         </p>
+       </div>
+     </form>
+
+
+    <!-- end of bulma added element -->
+  </div>
+  <button class="modal-close" ng-click="close()"></button>
 </div>

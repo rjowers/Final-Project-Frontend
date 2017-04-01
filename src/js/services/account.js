@@ -7,6 +7,7 @@ service.login = login;
 service.addReview = addReview;
 service.getReviewsShow = getReviewsShow;
 service.updateUser = updateUser;
+service.token = token
 //service.addReview2 = addReview2;
 // service.seenit = seenit;
 // service.getshow = getshow;
@@ -38,6 +39,10 @@ function updateUser (data){
   return $http.put(`${SERVER}/updateuser`, data, {
     headers: getHeader()
   });
+}
+
+function token (){
+  return getHeader();
 }
 // function addReview2 (data) {
 //   return $http.post(`${SERVER}/reviews`, data, {
