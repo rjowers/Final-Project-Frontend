@@ -19,9 +19,23 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.myReviews.push(resp.data[count]);
+        //console.log($scope.myReviews)
+          // console.log($scope.myReviews[0].id)
+          // console.log($scope.myReviews)
       }
     }
+
+    for(var i = 0; i < $scope.myReviews.length; i++){
+      //console.log($scope.myReviews[i].id)
+      $http.get(`${SERVER}/comments/${$scope.myReviews[i].id}`).then(resp => {
+        console.log(resp.data[0].comment);
+      });
+    }
   });
+
+  //console.log($scope.myReviews.id)
+
+
 
   var selectedReview;
 
@@ -33,7 +47,7 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   $scope.enter = function (data) {
 
     data.review = selectedReview;
-    console.log(data)
+    //console.log(data)
     //console.log(AccountService.token());
 
     $http.post(`${SERVER}/comments`, data, {
