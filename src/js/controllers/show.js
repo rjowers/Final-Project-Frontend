@@ -1,7 +1,7 @@
 
 
 function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
-  function getMovie () {
+  function getShow () {
     for(var count = 0; count < $rootScope.shows.length; count++){
 
       if($rootScope.shows[count].id == $cookies.get('clickedPhoto')){
@@ -9,7 +9,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       }
     }
   }
-  var chosenShow = getMovie();
+  var chosenShow = getShow();
 
   $scope.info = $rootScope.shows[chosenShow];
   $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
@@ -17,8 +17,6 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
   $http.get(`${SERVER}/showreviews/${$cookies.get('clickedPhoto')}`).then(resp => {
       console.log(resp.data)
-      //console.log(resp.data[5].User.profileUrl)
-      //console.log(resp.data[0].review)
       $scope.test2 = resp.data;
     });
 

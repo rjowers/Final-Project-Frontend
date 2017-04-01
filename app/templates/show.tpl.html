@@ -60,7 +60,7 @@
     <a href="#!/profile-page">
       <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
     </a>
-    <a href="#!/review">
+    <a href="#!/review/{{review.showId}}/{{review.User.id}}">
       <div class="inline review-text">
         <div>{{review.User.userName}}'s review:</div>
         <div class="inline review-text">{{review.review}}</div>

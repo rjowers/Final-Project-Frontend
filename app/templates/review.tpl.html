@@ -1,0 +1,14 @@
+
+
+<div class="show-poster">
+  <img class="inline" ng-src="http://image.tmdb.org/t/p/w130/{{info.poster_path}}">
+  <div class="inline show-box">
+    <div class="show-title">{{info.name}}</div>
+    <div class="description">{{info.overview}}</div>
+  </div>
+  <div class="review-title">{{myReviews[0].User.userName}}'s Reviews</div>
+  <div class="ind-review-box" ng-repeat="review in myReviews">
+     <div class="inline ind-review-text">{{review.review}}</div>
+     <div class="inline ind-review-comment">Comment on this review</div>
+  </div>
+</div>

@@ -86,3 +86,29 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+////////////////////////// review page /////////////////////
+
+.review-title {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  color: #99AABB;
+}
+
+.ind-review-box {
+  border: 1px solid #99AABB;
+}
+
+.ind-review-text {
+  width: 84%;
+  font-size: 16px;
+  font-color: #99AABB;
+}
+
+.ind-review-comment {
+  width: 15%;
+  font-size: 16px;
+  font-color: #99AABB;
+  vertical-align: top;
+}

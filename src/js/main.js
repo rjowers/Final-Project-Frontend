@@ -10,7 +10,8 @@ import signInController from './controllers/signin';
 import HomeController from './controllers/home';
 import ShowController from './controllers/show';
 import UserProfileController from './controllers/user-profile.js';
-import ProfilePageController from './controllers/profile-page.js'
+import ProfilePageController from './controllers/profile-page.js';
+import ReviewController from './controllers/review.js';
 import SERVER from './server';
 import setup from './setup';
 
@@ -28,9 +29,10 @@ angular
     .controller('ShowController', ShowController)
     .controller('UserProfileController', UserProfileController)
     .controller('ProfilePageController', ProfilePageController)
+    .controller('ReviewController', ReviewController)
 
 
-import { token } from "./token";
+//import { token } from "./token";
 
 // $http instead of $.ajax
 
