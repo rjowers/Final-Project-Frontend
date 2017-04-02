@@ -12,9 +12,11 @@
       <img class ="show-pic" src="http://image.tmdb.org/t/p/w130//wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg">
     </div>
 
+
+
     <div class="show-reviews">Reviews
 
-      <div ng-repeat="review in test3" class="review-box">
+      <div ng-repeat="review in GetReviews" class="review-box">
 
           <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
         <a href="#!/review/{{review.userId}}/{{review.User.id}}">
