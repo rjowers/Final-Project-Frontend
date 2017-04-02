@@ -8,6 +8,7 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
     $http.get(`${SERVER}/user/${$stateParams.userid}/photos`).then(resp => {
       $scope.user = resp.data;
+
       $scope.photos = resp.data.photos;
 
     });
@@ -17,12 +18,20 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
 
-  $scope.addProfilepic = function (info) {
+  $scope.addProfilepic = (info) => {
+var pic = {
+  profileUrl
+}
     AccountService.updateUser(info).then(resp => {
-          }).catch(error => {
+
+           }).then( $state.reload())
+           .catch(error => {
              console.log(error);
-          });
+         });
+
+
   };
+
 
 
   $scope.toggle = function() {
@@ -31,6 +40,21 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
       $scope.myVar = true;
     }
   };
+
+
+  // function GetReviews () {
+
+    $http.get(`${SERVER}/reviews`).then(resp => {
+      $scope.test3 = resp.data;
+      console.log(resp.data);
+      // console.log(resp.data);
+      // $scope.photos = resp.data.photos;
+
+    });
+  // }
+
+  // GetReviews();
+
 
 
 
