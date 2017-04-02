@@ -14,6 +14,7 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   $scope.info = $rootScope.shows[chosenShow];
 
   $scope.myReviews = [];
+  $scope.myComments = [];
 
   $http.get(`${SERVER}/showreviews/${$stateParams.id}`).then(resp => {
     for(var count = 0; count < resp.data.length; count++){
@@ -21,14 +22,17 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
         $scope.myReviews.push(resp.data[count]);
         //console.log($scope.myReviews)
           // console.log($scope.myReviews[0].id)
-          // console.log($scope.myReviews)
+           //console.log($scope.myReviews)
       }
     }
 
     for(var i = 0; i < $scope.myReviews.length; i++){
       //console.log($scope.myReviews[i].id)
       $http.get(`${SERVER}/comments/${$scope.myReviews[i].id}`).then(resp => {
-        console.log(resp.data[0].comment);
+        //console.log(resp.data[0].comment);
+        //console.log(resp.data)
+        $scope.myComments.push(resp.data)
+        console.log($scope.myComments)
       });
     }
   });
