@@ -45,6 +45,23 @@ border-bottom-color: red;
 
 ////////Sign Up Page//////////////////
 
+.signup-background{
+  position: absolute;
+top: 0;
+left: 0;
+// position: relative;
+// z-index: 0;
+ // filter: blur(5px);
+
+/* Preserve aspet ratio */
+min-width: 100%;
+min-height: 100%;
+}
+
+.sign-up-container{
+  // position: relative;
+// margin-bottom: 500px;
+}
 .signup-form{
   margin-right: 400px;
 
@@ -60,6 +77,29 @@ input{
   width: 500px;
 }
 
+.Join{
+  position: relative;
+  z-index: 2;
+
+  margin-top: 25px;
+ font-size: 20px;
+  position: inline;
+  color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+
+  width: 204px;
+  border: 1px solid transparent;
+}
+
+.Join:hover{
+  opacity: .9;
+}
+.Join:focus {
+  outline:0;
+}
 
 
 .create-account{
