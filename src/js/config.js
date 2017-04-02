@@ -27,7 +27,7 @@ function Config ($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/show.tpl.html'
         })
         .state('profile-page', {
-          url: '/profile-page',
+          url: '/profile-page/:user',
           controller: 'ProfilePageController',
           templateUrl: 'templates/profile-page.tpl.html'
         })

@@ -26,8 +26,8 @@
 
 
 
-    <div class =" addprofile" ng-show="myVar">
-    <!-- <div class =" addprofile" > --> <!--  User this to see form without toggle  -->
+    <!-- <div class =" addprofile" ng-show="myVar"> -->
+    <div class =" addprofile" > <!--  User this to see form without toggle -->
 
       <div class="columns form-container">
           <div class="column"></div>
@@ -46,6 +46,24 @@
           <div class="column"></div>
       </div>
     </div>
+
+
+    <div class="show-reviews">Reviews
+
+      <div ng-repeat="review in test3" class="review-box">
+
+          <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
+        <a href="#!/review/{{review.userId}}/{{review.User.id}}">
+          <div class="inline review-text">
+            <div>{{review.User.userName}}'s review:</div>
+            <div class="inline review-text">{{review.review}}</div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
 
     <!-- </div> -->
   <!-- </div> -->

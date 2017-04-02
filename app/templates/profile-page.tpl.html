@@ -15,9 +15,8 @@
     <div class="show-reviews">Reviews
 
       <div ng-repeat="review in test3" class="review-box">
-        <a href="#!/profile-page">
+
           <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
-        </a>
         <a href="#!/review/{{review.userId}}/{{review.User.id}}">
           <div class="inline review-text">
             <div>{{review.User.userName}}'s review:</div>
