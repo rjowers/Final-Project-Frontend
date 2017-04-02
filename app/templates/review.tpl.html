@@ -10,8 +10,9 @@
   <div class="ind-review-box" ng-repeat="review in myReviews">
      <div class="inline ind-review-text">{{review.review}}</div>
      <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
-     <div ng-repeat="comment in myComments">{{comment[0].comment}}</div>
-  </div>
+     <!-- <div ng-repeat="comment in myComments">{{comment[0].comment}}</div> -->
+     <div class="comment-box">Comments on this review:</div>
+     <div ng-repeat="comment in review.commentsArray">{{comment.comment}}</div>
 </div>
 
 

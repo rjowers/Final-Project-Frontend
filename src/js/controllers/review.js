@@ -20,9 +20,8 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.myReviews.push(resp.data[count]);
-        //console.log($scope.myReviews)
+        console.log($scope.myReviews)
           // console.log($scope.myReviews[0].id)
-           //console.log($scope.myReviews)
       }
     }
 
@@ -33,6 +32,14 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
         //console.log(resp.data)
         $scope.myComments.push(resp.data)
         console.log($scope.myComments)
+        if($scope.myComments.length === $scope.myReviews.length){
+          console.log('equal')
+          for(var i2 = 0; i2 < $scope.myReviews.length; i2++){
+            $scope.myReviews[i2].commentsArray = $scope.myComments[i2];
+            console.log($scope.myReviews)
+          }
+
+        }
       });
     }
   });
