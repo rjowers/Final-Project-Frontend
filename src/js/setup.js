@@ -15,10 +15,8 @@ function setup ($rootScope, $cookies, $http) {
   var pageNum = 1;
     $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}`)
     .then ( resp => {
-      console.log(resp.data.results)
       $rootScope.shows = resp.data.results
       console.log($rootScope.shows)
-      // $scope.posterPhotos = $rootScope.info
     }
   )}
   putMovies()

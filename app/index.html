@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
+  </head>
   <body ng-app="app">
       <nav class="nav has-shadow nav">
     <div class="container">
@@ -35,8 +36,11 @@
         </a>
         <a class="nav-item is-tab" href="#!/sign-up">Sign Up</a>
         <a class="nav-item is-tab" href="#!/sign-in">Sign In</a>
-
-        <input class="search" placeholder="Search"></input>
+        <div ng-controller="menuController">
+          <form ng-submit="submit(search)">
+            <input class="search" placeholder="Search" ng-model="search.text">
+          </form>
+        </div>
       </div>
     </div>
   </nav>
