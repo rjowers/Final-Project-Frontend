@@ -8,6 +8,7 @@ service.addReview = addReview;
 service.getReviewsShow = getReviewsShow;
 service.updateUser = updateUser;
 service.token = token
+service.me = me
 //service.addReview2 = addReview2;
 // service.seenit = seenit;
 // service.getshow = getshow;
@@ -44,6 +45,13 @@ function updateUser (data){
 function token (){
   return getHeader();
 }
+
+function me (){
+  return $http.get(`${SERVER}/me`, {
+    headers: getHeader()
+  });
+}
+
 // function addReview2 (data) {
 //   return $http.post(`${SERVER}/reviews`, data, {
 //     headers: getHeader()
