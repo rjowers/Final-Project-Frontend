@@ -36,6 +36,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           controller: 'UserProfileController',
           templateUrl: 'templates/user-profile.tpl.html'
         })
+        .state('not-found', {
+          url: '/not-found',
+          //controller: 'ReviewController',
+          templateUrl: 'templates/not-found.tpl.html'
+        })
         .state('review', {
           url: '/review/:id/:user',
           controller: 'ReviewController',
