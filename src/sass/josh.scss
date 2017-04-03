@@ -37,6 +37,10 @@
   vertical-align: top;
 }
 
+div.description{
+  color: #99AABB;
+
+}
 .show-description {
   color: #99AABB;
   font-size: 16px;
@@ -103,7 +107,17 @@
 .ind-review-text {
   width: 84%;
   font-size: 16px;
-  font-color: #99AABB;
+  color: #99AABB;
+}
+
+div.inline.review-text.ng-binding{
+  color: #99AABB;
+
+}
+
+div.ng-binding{
+  color: #99AABB;
+
 }
 
 .ind-review-comment {

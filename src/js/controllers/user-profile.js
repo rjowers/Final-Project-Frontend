@@ -6,10 +6,11 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
   function init () {
 
-    $http.get(`${SERVER}/user/${$stateParams.userid}/photos`).then(resp => {
+    $http.get(`${SERVER}/users/${$stateParams.userid}/`).then(resp => {
       $scope.user = resp.data;
 
       $scope.photos = resp.data.photos;
+      // console.log(resp.data.photos);
 
     });
   }
