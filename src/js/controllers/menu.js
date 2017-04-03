@@ -1,19 +1,22 @@
-
+import { token } from "../token"
 
 function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
 
   $scope.submit = function(data){
     console.log(data)
+    searchShow(data.text);
   }
 
-  // function putMovies () {
-  // var pageNum = 1;
-  //   $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}`)
-  //   .then ( resp => {
-  //     $rootScope.shows = resp.data.results
-  //     console.log($rootScope.shows)
-  //   }
-  // )}
+//`https://api.themoviedb.org/3/search/tv?api_key=c1590ac6ed33444a3c6284a9319516fe&query=its+always+sunny`,
+
+  function searchShow (searchInput) {
+    $http.get(`https://api.themoviedb.org/3/search/tv?api_key=${token}&query=${searchInput}`,)
+    .then ( resp => {
+      console.log(resp)
+    }
+  )}
+
+
 
 
 };
