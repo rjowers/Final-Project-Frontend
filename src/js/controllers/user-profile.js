@@ -9,6 +9,9 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
     $http.get(`${SERVER}/userreviews/${$stateParams.userId}`).then(resp => {
       $scope.user = resp.data;
       console.log(resp.data)
+      $scope.profileUrl = resp.data[0].User.profileUrl;
+      console.log($scope.profileUrl);
+      //
     });
   }
 
@@ -17,9 +20,8 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
   $scope.addProfilepic = (info) => {
-var pic = {
-  profileUrl
-}
+
+
     AccountService.updateUser(info).then(resp => {
 
            }).then( $state.reload())
