@@ -24,11 +24,6 @@ var pageNum = 1;
 )}
 putMovies()
 
-$scope.clickShow = function (click){
-  // console.log(click)
-  $cookies.put('clickedPhoto', click)
-  $state.go('show');
-}
 };
 
 HomeController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope']

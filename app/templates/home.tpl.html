@@ -18,8 +18,10 @@
       <div class="card-image" >
       <a href="#!/photo/{{photo.id}}">
         <figure class="image is-1by1 poster-images">
-          <img class="image-main" ng-click="clickShow(photo.id)"ng-src="http://image.tmdb.org/t/p/w185//{{photo.poster_path}}"  alt="Image"
-          ng-mouseover="hover=true" ng-mouseleave="hover=false">
+          <a href="#!/show/{{photo.id}}">
+            <img class="image-main" ng-src="http://image.tmdb.org/t/p/w185//{{photo.poster_path}}"  alt="Image"
+            ng-mouseover="hover=true" ng-mouseleave="hover=false">
+          </a>
         </figure>
       </a>
       <!-- <a href="#!/show/{{ photo.user_id }}" ng-mouseover="hover=true">
