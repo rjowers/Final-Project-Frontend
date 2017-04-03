@@ -1,10 +1,10 @@
 
 
-function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
+function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams) {
   function getShow () {
     for(var count = 0; count < $rootScope.shows.length; count++){
 
-      if($rootScope.shows[count].id == $cookies.get('clickedPhoto')){
+      if($rootScope.shows[count].id == $stateParams.showId){
         return count;
       }
     }
@@ -15,7 +15,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
   //console.log($scope.fullUrl)
 
-  $http.get(`${SERVER}/showreviews/${$cookies.get('clickedPhoto')}`).then(resp => {
+  $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
       console.log(resp.data)
       $scope.test2 = resp.data;
     });
@@ -43,13 +43,13 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     //var url = `${SERVER}/userShows`;
     // data.text
     // data.rating
-    console.log($cookies.get('clickedPhoto'))
+    console.log($stateParams.showId)
     var array = data.rating.split(" ")
     var ratingNumber = parseInt(array[0])
     var reviewInfo = {
       review: data.text,
       ranking: ratingNumber,
-      showId: $cookies.get('clickedPhoto'),
+      showId: $stateParams.showId,
       showName: $rootScope.shows[chosenShow].name,
       seenIt: true
     }
@@ -70,7 +70,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
 }
 
-ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService'];
+ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams'];
 
 export default ShowController;
 

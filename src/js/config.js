@@ -22,7 +22,7 @@ function Config ($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/sign-in.tpl.html'
         })
         .state('show', {
-          url: '/show',
+          url: '/show/:showId',
           controller: 'ShowController',
           templateUrl: 'templates/show.tpl.html'
         })
