@@ -25,7 +25,7 @@
         <span></span>
         <span></span>
       </span>
-      <div class="nav-right">
+      <div class="nav-right" ng-controller="menuController">
         <a class="nav-item is-tab is-hidden-tablet is-active">Top Shows</a>
 
         <a class="nav-item is-tab" href="#!/user-profile">
@@ -36,7 +36,7 @@
         </a>
         <a class="nav-item is-tab" href="#!/sign-up">Sign Up</a>
         <a class="nav-item is-tab" href="#!/sign-in">Sign In</a>
-        <div ng-controller="menuController">
+        <div>
           <form ng-submit="submit(search)">
             <input class="search" placeholder="Search" ng-model="search.text">
           </form>
