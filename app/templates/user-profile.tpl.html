@@ -1,6 +1,6 @@
 <div class="profile-background-container">
 <img class ="profile-background" src="http://wallpapercave.com/wp/mlGFLlB.jpg">
-<p class="username"></p>
+<p class="username">{{user[0].User.userName}}</p>
 </div>
 
 
@@ -11,8 +11,8 @@
 
 
 <figure class="image pic-container">
-  <object data="../images/Default-Profile.jpg">
-  <img class="profile-pic" src="">
+  <!-- <object data="../images/Default-Profile.jpg"> -->
+  <img class="profile-pic" src="{{user[0].User.profileUrl}}">
 </object>
   <!-- <a class="change" href=""> Change Image</a> -->
 </figure>
@@ -50,10 +50,10 @@
 
     <div class="show-reviews">Reviews
 
-      <div ng-repeat="review in test3" class="review-box">
+      <div ng-repeat="review in user" class="review-box">
 
-          <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
-        <a href="#!/review/{{review.showId}}/{{review.User.id}}">
+          <!-- <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image"> -->
+        <a href="#!/review/{{review.showId}}/{{review.User.userId}}">
           <div class="inline review-text">
             <div>{{review.User.userName}}'s review:</div>
             <div class="inline review-text">{{review.review}}</div>

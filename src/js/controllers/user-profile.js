@@ -6,12 +6,9 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
   function init () {
 
-    $http.get(`${SERVER}/users/${$stateParams.userid}/`).then(resp => {
+    $http.get(`${SERVER}/userreviews/${$stateParams.userId}`).then(resp => {
       $scope.user = resp.data;
-
-      $scope.photos = resp.data.photos;
-      // console.log(resp.data.photos);
-
+      console.log(resp.data)
     });
   }
 
@@ -45,13 +42,13 @@ var pic = {
 
   // function GetReviews () {
 
-    $http.get(`${SERVER}/reviews`).then(resp => {
-      $scope.test3 = resp.data;
-      console.log(resp.data);
-      // console.log(resp.data);
-      // $scope.photos = resp.data.photos;
-
-    });
+    // $http.get(`${SERVER}/reviews`).then(resp => {
+    //   $scope.test3 = resp.data;
+    //   console.log(resp.data);
+    //   // console.log(resp.data);
+    //   // $scope.photos = resp.data.photos;
+    //
+    // });
   // }
 
   // GetReviews();
