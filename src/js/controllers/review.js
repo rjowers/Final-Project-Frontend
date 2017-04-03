@@ -67,6 +67,7 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
       console.log(resp);
     });
 
+    $scope.modalToggle = ""
 
   };
 
