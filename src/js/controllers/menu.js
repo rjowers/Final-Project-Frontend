@@ -1,6 +1,6 @@
 import { token } from "../token"
 
-function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
+function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $location, $window) {
 
   $scope.submit = function(data){
     console.log(data)
@@ -12,7 +12,9 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   function searchShow (searchInput) {
     $http.get(`https://api.themoviedb.org/3/search/tv?api_key=${token}&query=${searchInput}`,)
     .then ( resp => {
-      console.log(resp)
+      console.log(resp.data.results[0].id)
+      // $location.url()
+      $window.location.href = `#!/show/${resp.data.results[0].id}`;
     }
   )}
 
@@ -21,6 +23,6 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
 };
 
-  menuController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService'];
+  menuController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$location', '$window'];
 
   export default menuController;
