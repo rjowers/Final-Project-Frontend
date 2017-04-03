@@ -19,7 +19,31 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   )}
 
 
-// $http.get(``)
+
+
+
+  AccountService.me().then(resp => {
+      //console.log(resp.data.id)
+      $scope.userId = resp.data.id
+      }).catch(error => {
+          console.log(error);
+    });
+
+
+// console.log('here')
+// console.log(AccountService.token())
+//
+//   $http.get(`${SERVER}/me`,{
+//     headers: AccountService.token()
+//   }).then(resp=>{
+//     console.log(resp)
+//   })
+
+  // $http.post(`${SERVER}/comments`, data, {
+  //   headers: AccountService.token()
+  // }).then(resp => {
+  //   console.log(resp);
+  // });
 
 
 

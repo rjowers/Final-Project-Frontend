@@ -12,9 +12,9 @@ var pageNum = 1;
     console.log($rootScope.info)
     $scope.posterPhotos = $rootScope.info
     var item = Math.floor(Math.random()*[5]);
-    console.log(item);
+    //console.log(item);
     $scope.backgroundPhotos = $rootScope.info[item]
-    console.log($scope.backgroundPhotos.backdrop_path)
+    //console.log($scope.backgroundPhotos.backdrop_path)
     // $scope.backgroundPhotos = $rootScope.info[item]
     // // console.log($rootScope.info[item])
     // // console.log($scope.backgroundPhotos.backdrop_path)
