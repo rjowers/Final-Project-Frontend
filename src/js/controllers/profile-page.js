@@ -13,18 +13,18 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
     }
   });
 
-  $http.get(`${SERVER}/userreviews/${$stateParams.user}`).then(resp => {
-    console.log(resp);
-    for(var count = 0; count < resp.data.length; count++){
-      if(resp.data[count].User.id == $stateParams.user){
-        $scope.GetOneReview = resp.data;
-        // $scope.myReviews.push(resp.data[count]);
-        //console.log($scope.myReviews)
-          // console.log($scope.myReviews[0].id)
-          // console.log($scope.myReviews)
-      }
-    }
-  });
+  // $http.get(`${SERVER}/userreviews/${$stateParams.user}`).then(resp => {
+  //   console.log(resp);
+  //   for(var count = 0; count < resp.data.length; count++){
+  //     if(resp.data[count].User.id == $stateParams.user){
+  //       $scope.GetOneReview = resp.data;
+  //       // $scope.myReviews.push(resp.data[count]);
+  //       //console.log($scope.myReviews)
+  //         // console.log($scope.myReviews[0].id)
+  //         // console.log($scope.myReviews)
+  //     }
+  //   }
+  // });
 
 
 
