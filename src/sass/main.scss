@@ -329,6 +329,19 @@ object{
   // align-items: center;
   // justify-content: center;
 }
+.profilepage-pic {
+  // display: flex;
+  // align-self: center;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  bottom: 186px;
+  margin-left: 100px;
+  border-radius: 45%;
+  border: solid 1px white;
+
+}
+
 .profile-pic {
   // display: flex;
   // align-self: center;

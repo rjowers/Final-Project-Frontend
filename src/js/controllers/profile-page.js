@@ -5,12 +5,21 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.GetReviews = resp.data;
-        // $scope.myReviews.push(resp.data[count]);
-        //console.log($scope.myReviews)
-          // console.log($scope.myReviews[0].id)
-          // console.log($scope.myReviews)
+        console.log(resp.data[0].showId)
       }
     }
+
+
+      function getShow (showId) {
+        for(var count = 0; count < $rootScope.shows.length; count++){
+
+          if($rootScope.shows[count].id == showId){
+            return count;
+          }
+        }
+      }
+
+console.log(getShow(1402));
   });
 
   // $http.get(`${SERVER}/userreviews/${$stateParams.user}`).then(resp => {

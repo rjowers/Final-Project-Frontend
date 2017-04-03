@@ -5,7 +5,7 @@
 <p class="username">{{GetReviews[0].User.userName}}</p>
 </div>
 <!-- <figure class="image pic-container"> -->
-  <img class="profile-pic" ng-src="{{GetReviews[0].User.profileUrl}}">
+  <img class="profilepage-pic" ng-src="{{GetReviews[0].User.profileUrl}}">
 <!-- </figure> -->
 <div class="review-container">
   <!-- <div class ="show-pic-container">
@@ -17,8 +17,8 @@
     <div class="show-reviews">Reviews
 
       <div ng-repeat="review in GetReviews" class="review-box">
-
-          <!-- <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image"> -->
+        <div>{{review.showId}}</div>
+          <!-- <img class="review-image inline" ng-src="{{review.User.showId}}" alt="no image"> -->
         <a href="#!/review/{{review.showId}}/{{review.User.id}}">
           <div class="inline review-text">
             <div>{{review.User.userName}}'s review:</div>
