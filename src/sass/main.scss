@@ -2,7 +2,7 @@
 @import "josh";
 
 html{
-  background-color: #151515
+  background-color: #151515;
   // background-color: #222222;
 }
 .container {
@@ -27,13 +27,22 @@ html{
 }
 .nav{
   // background-color: #2e2e2e;
-
   background-color: #222222;
+
+
+}
+
+.nav-item a, a.nav-item {
+    color: #d2d2d2;
+    font-size: 16px;
 
 }
 
 
+
+
 .nav-right {
+
 a:hover {
 color: white;
 border-bottom: solid;

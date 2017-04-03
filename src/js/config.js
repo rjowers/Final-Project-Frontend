@@ -32,7 +32,7 @@ function Config ($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/profile-page.tpl.html'
         })
         .state('user-profile', {
-          url: '/user-profile',
+          url: '/user-profile/:userId',
           controller: 'UserProfileController',
           templateUrl: 'templates/user-profile.tpl.html'
         })
