@@ -54,7 +54,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       seenIt: true,
       posterPath: $rootScope.shows[chosenShow].poster_path,
       backgroundPath: $rootScope.shows[chosenShow].backdrop_path,
-      showDescription: $rootScope.shows[chosenShow].overview,
+      showDescription: $rootScope.shows[chosenShow].overview      
     }
 
 
