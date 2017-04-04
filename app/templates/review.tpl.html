@@ -8,6 +8,7 @@
   </div>
   <div class="review-title">{{myReviews[0].User.userName}}'s Reviews</div>
   <div class="ind-review-box" ng-repeat="review in myReviews">
+     <div>{{myReviews[0].User.userName}} gives this show {{review.ranking}} stars. Here is his review:</div>
      <div class="inline ind-review-text">{{review.review}}</div>
      <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
      <!-- <div ng-repeat="comment in myComments">{{comment[0].comment}}</div> -->

@@ -7,7 +7,10 @@
     <div class="show-title">{{info.name}}</div>
     <div class="description">{{info.overview}}</div>
   </div>
+
   <div class="review-link inline" ng-click="modal()">Click here<br>to review</div>
+
+
 
   <div class="modal" ng-class="modalToggle">
     <div class="modal-background"></div>
@@ -62,7 +65,7 @@
     </a>
     <a href="#!/review/{{review.showId}}/{{review.User.id}}">
       <div class="inline review-text">
-        <div>{{review.User.userName}}'s review:</div>
+        <div>{{review.User.userName}}'s review:    {{review.ranking}} stars</div>
         <div class="inline review-text">{{review.review}}</div>
       </div>
     </a>
