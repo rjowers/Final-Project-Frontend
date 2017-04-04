@@ -61,7 +61,19 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
         $scope.test2.push(resp.data);
         }).catch(error => {
             console.log(error);
+
+      }).then(
+
+      // $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
+      //     console.log(resp.data)
+      //     $scope.test2 = resp.data;
+      //     console.log(resp.data)
+      //   })
+
+      );
+
       })
+
   };
 }
 
