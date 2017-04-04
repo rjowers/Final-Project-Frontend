@@ -301,10 +301,21 @@ img.landing {
 .profile-background {
   height: 350px;
   width: 100%;
+  object-fit: cover;
+
+}
+
+.fade-box{
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  position: relative;
+  bottom: 500px;
+
 }
 
 .username {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   position: relative;
   bottom: -20px;
@@ -342,6 +353,11 @@ object{
 
 }
 
+img.profile-pic{
+  height: 200px;
+  width: 200px;
+}
+
 .profile-pic {
   // display: flex;
   // align-self: center;
@@ -349,7 +365,6 @@ object{
   width: 100px;
   border-radius: 45%;
   border: solid 1px white;
-
 }
 
 // div.show-pic-container{
@@ -450,13 +465,14 @@ input{
 
 
 .userpage-reviews {
-  margin-top: 15px;
+  position: relative;
+  bottom: 200px;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   color: #99AABB;
   font-size: 40px;
-  text-align: center;
+  text-align: left;
 }
 
 .review-link {

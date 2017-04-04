@@ -34,13 +34,22 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
 
-  $scope.toggle = function() {
-    console.log($cookies.get('user-id') === $stateParams.userid);
-    if ($cookies.get('user-id') === $stateParams.userid) {
-      $scope.myVar = true;
-    }
-  };
+  // $scope.toggle = function() {
+  //   console.log($cookies.get('user-id') === $stateParams.userid);
+  //   if ($cookies.get('user-id') === $stateParams.userid) {
+  //     $scope.myVar = true;
+  //   }
+  // };
 
+
+  $scope.modal = function (){
+    $scope.modalToggle = "is-active";
+  }
+
+
+  $scope.close = function (){
+    $scope.modalToggle = "";
+  }
 
   // function GetReviews () {
 

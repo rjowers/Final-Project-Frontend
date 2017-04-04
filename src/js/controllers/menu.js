@@ -21,22 +21,33 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
 
 
+  // getData.then(function (data) {
+  //   // code
+  // })
+  //
+  // getData.then(data => {
+  //   // code
+  // })
 
-  AccountService.me().then(resp => {
+
+  AccountService.me()
+    .then(resp => {
       //console.log(resp.data.id)
       $scope.userId = resp.data.id
       console.log($scope.userId);
-      }).catch(error => {
+      $http.get(`${SERVER}/userreviews/${$scope.userId}`).then(resp => {
+        $scope.user = resp.data;
+        console.log(resp.data)
+        $scope.profileUrl = resp.data[0].User.profileUrl;
+        // console.log($scope.profileUrl);
+        //
+      })
+    })
+    .catch(error => {
           console.log(error);
-    }).then(
+    })
 
-    $http.get(`${SERVER}/userreviews/${$scope.userId}`).then(resp => {
-      $scope.user = resp.data;
-      console.log(resp.data)
-      $scope.profileUrl = resp.data[0].User.profileUrl;
-      // console.log($scope.profileUrl);
-      //
-    }));
+
 
 
 
