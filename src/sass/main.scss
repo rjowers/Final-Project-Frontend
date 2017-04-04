@@ -448,6 +448,85 @@ input{
 
 }
 
+
+.userpage-reviews {
+  margin-top: 15px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #99AABB;
+  font-size: 40px;
+  text-align: center;
+}
+
+.review-link {
+  vertical-align: top;
+  font-size: 20;
+  color: #99AABB;
+}
+
+
+
+.userpage-reviewbox {
+  height: 260px;
+  margin-top: 25px;
+  font-size: 16px;
+  text-align: left;
+  // vertical-align: top;
+  // padding-bottom: 60px;
+  border-bottom: 1px solid #99AABB;
+}
+
+
+.userpage-reviewtext-title{
+  display: inline-block;
+  vertical-align: top;
+
+.title{
+  font-size: 24px;
+  color: white;
+  font-family: 'Patua One', cursive;
+
+
+}
+}
+.userpage-reviewtext {
+  padding-top: 0px;
+  display: inline-block;
+  vertical-align: top;
+  color: #99AABB;
+
+
+  // width: 94%;
+  // font-size: 16px;
+  // text-align: left;
+  // vertical-align: top;
+  // text-overflow: ellipsis;
+  // // white-space: nowrap;
+  // overflow: hidden;
+  // float:right;
+  // border: solid;
+  // padding-left: 300px;
+
+}
+
+.userpage-reviewimage {
+  height: 226px;
+  width: 149px;
+  transition: border .1s linear;
+  border: 1px solid #81878E;
+}
+
+.ranking-number{
+  height: 20px;
+  width: 20px;
+}
+
+.star{
+  height: 20px;
+  width: 20px;
+}
+
 .feed-followers-container{
   position: relative;
   bottom: 300px
