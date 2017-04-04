@@ -39,8 +39,9 @@
 
 div.description{
   color: #99AABB;
-
 }
+
+
 .show-description {
   color: #99AABB;
   font-size: 16px;
@@ -93,6 +94,13 @@ div.description{
 
 ////////////////////////// review page /////////////////////
 
+.review-description {
+  vertical-align: top;
+  width: 75%;
+  margin-left: 5%;
+}
+
+
 .review-title {
   margin-top: 15px;
   text-align: center;
@@ -131,6 +139,14 @@ div.ng-binding{
   font-size: 16px;
   font-color: #99AABB;
   //border-bottom: 1px solid 99AABB;
+}
+
+.review-pic {
+  width: 50px;
+}
+
+.align-center{
+  text-align: center;
 }
 
 /////////////////// not found page //////////////

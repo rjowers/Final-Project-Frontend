@@ -2,19 +2,22 @@
 
 <div class="show-poster">
   <img class="inline" ng-src="http://image.tmdb.org/t/p/w130/{{info.poster_path}}">
-  <div class="inline show-box">
+  <div class="inline review-description">
     <div class="show-title">{{info.name}}</div>
     <div class="description">{{info.overview}}</div>
   </div>
-  <div class="review-title">{{myReviews[0].User.userName}}'s Reviews</div>
+  <div class="align-center">
+     <img class="review-pic inline" ng-src="{{myReviews[0].User.profileUrl}}">
+     <div class="review-title inline">{{myReviews[0].User.userName}}'s Review</div>
+  </div>
+
   <div class="ind-review-box" ng-repeat="review in myReviews">
      <div>{{myReviews[0].User.userName}} gives this show {{review.ranking}} stars. Here is his review:</div>
      <div class="inline ind-review-text">{{review.review}}</div>
      <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
-     <!-- <div ng-repeat="comment in myComments">{{comment[0].comment}}</div> -->
      <div class="comment-box">Comments on this review:</div>
      <div ng-repeat="comment in review.Comments">{{comment.comment}}</div>
-</div>
+  </div>
 
 
 <div class="modal" ng-class="modalToggle">
@@ -43,4 +46,6 @@
     <!-- end of bulma added element -->
   </div>
   <button class="modal-close" ng-click="close()"></button>
+</div>
+
 </div>

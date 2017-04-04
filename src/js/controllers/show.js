@@ -54,7 +54,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       seenIt: true,
       posterPath: $rootScope.shows[chosenShow].poster_path,
       backgroundPath: $rootScope.shows[chosenShow].backdrop_path,
-      showDescription: $rootScope.shows[chosenShow].overview      
+      showDescription: $rootScope.shows[chosenShow].overview
     }
 
 
@@ -62,15 +62,15 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
         }).catch(error => {
             console.log(error);
-      });
+      }).then(
 
-    // AccountService.getReviewsShow().then(resp => {
-    //
-    //     }).catch(error => {
-    //         console.log(error);
-    //   });
+      $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
+          console.log(resp.data)
+          $scope.test2 = resp.data;
+        })
+
+      );
   };
-
 }
 
 ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams'];
