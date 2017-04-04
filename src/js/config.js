@@ -6,6 +6,7 @@ function Config ($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/home.tpl.html',
         controller: 'HomeController'
       })
+      
         // .state('root', {
         //   abstract: true,
         //   templateUrl: 'templates/layout.tpl.html',

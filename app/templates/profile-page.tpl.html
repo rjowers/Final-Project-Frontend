@@ -14,11 +14,12 @@
 
 
 
+
+
     <div class="show-reviews">Reviews
 
       <div ng-repeat="review in GetReviews" class="review-box">
-        <div>{{review.showId}}</div>
-          <!-- <img class="review-image inline" ng-src="{{review.User.showId}}" alt="no image"> -->
+          <img class="review-image inline" ng-src="http://image.tmdb.org/t/p/w130/{{review.posterPath}}" alt="no image">
         <a href="#!/review/{{review.showId}}/{{review.User.id}}">
           <div class="inline review-text">
             <div>{{review.User.userName}}'s review:</div>
