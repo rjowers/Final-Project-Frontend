@@ -1,6 +1,6 @@
 <div class="profile-background-container">
 <img class ="profile-background" src="{{user[0].User.backgroundUrl}}">
-
+<!-- <div class="fade-box"> </div> -->
 <p class="username">{{user[0].User.userName}}</p>
 </div>
 
@@ -14,49 +14,60 @@
 <figure class="image pic-container">
   <!-- <object data="../images/Default-Profile.jpg"> -->
   <img class="profile-pic" src="{{user[0].User.profileUrl}}">
-</object>
   <!-- <a class="change" href=""> Change Image</a> -->
 </figure>
 
 
 
+
   <div class ="profile">
 
-    <a class="addphoto" ng-click="toggle()" aria-label"Toggle ngHide">Add Image</a>
+    <a class="addphoto"  ng-click="modal()" >Add Image</a>
   </div>
 
 
-
+  <div class="modal" ng-class="modalToggle">
+    <div class="modal-background"></div>
+    <div class="modal-content">
     <!-- <div class =" addprofile" ng-show="myVar"> -->
-    <div class =" addprofile" > <!--  User this to see form without toggle -->
+    <!-- <div class =" addprofile" > <!--  User this to see form without toggle --> -->
 
       <div class="columns form-container">
           <div class="column"></div>
           <div class="column ">
             <form ng-submit="addProfilepic(profile)">
               <p class="control">
-                  <input type="text" placeholder="http://awesomephoto"
+                  <input type="text" placeholder="http://you"
                        ng-model="profile.profileUrl" />
               </p>
 
               <p class="control">
-                  <button class="add-picture is-primary">Add It!</button>
+                  <button class="add-picture is-primary">Change Profile Picture</button>
               </p>
             </form>
             <form ng-submit="addProfilepic(profile)">
               <p class="control">
-                  <input type="text" placeholder="http://awesomephoto"
+                  <input type="text" placeholder="http://background"
                        ng-model="profile.backgroundUrl" />
               </p>
 
               <p class="control">
-                  <button class="add-picture is-primary">Add It!</button>
+                  <button class="add-picture is-primary">Change Background Picture</button>
               </p>
             </form>
           </div>
           <div class="column"></div>
       </div>
+    <!-- </div> -->
     </div>
+    <button class="modal-close" ng-click="close()"></button>
+      </div>
+
+
+
+
+
+
 
 
     <div class="userpage-reviews">Reviews
