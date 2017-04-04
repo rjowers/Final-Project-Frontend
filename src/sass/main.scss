@@ -306,12 +306,19 @@ img.landing {
 }
 
 .fade-box{
-  background-color: white;
+  background-color: black;
   height: 50px;
   width: 100%;
-  position: relative;
-  bottom: 500px;
+  position: absolute;
+  bottom: 324px;
+  opacity: .5;
 
+span{
+  color: white;
+font-size: 24px;
+vertical-align: center;
+ margin-left: 380px;
+}
 }
 
 .username {
@@ -349,7 +356,7 @@ object{
   bottom: 186px;
   margin-left: 100px;
   border-radius: 45%;
-  border: solid 1px white;
+  border: solid 2px white;
 
 }
 
@@ -364,7 +371,7 @@ img.profile-pic{
   height: 100px;
   width: 100px;
   border-radius: 45%;
-  border: solid 1px white;
+  border: solid 2px white;
 }
 
 // div.show-pic-container{
