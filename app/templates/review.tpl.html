@@ -11,12 +11,12 @@
      <div class="review-title inline">{{myReviews[0].User.userName}}'s Review</div>
   </div>
 
-  <div class="ind-review-box" ng-repeat="review in myReviews">
+  <div class="ind-review-box" ng-repeat="review in myReviews | orderBy:'-'">
      <div>{{myReviews[0].User.userName}} gives this show {{review.ranking}} stars. Here is his review:</div>
      <div class="inline ind-review-text">{{review.review}}</div>
      <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
      <div class="comment-box">Comments on this review:</div>
-     <div ng-repeat="comment in review.Comments">{{comment.comment}}</div>
+     <div ng-repeat="comment in review.Comments | orderBy:'-'">{{comment.comment}}</div>
   </div>
 
 

@@ -59,7 +59,7 @@
 
 <div class="show-reviews">Reviews
 
-  <div ng-repeat="review in test2" class="review-box">
+  <div ng-repeat="review in test2 | orderBy:'-'" class="review-box">
     <a href="#!/profile-page/{{review.User.id}}">
       <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
     </a>
