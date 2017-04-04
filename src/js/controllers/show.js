@@ -51,7 +51,10 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       ranking: ratingNumber,
       showId: $stateParams.showId,
       showName: $rootScope.shows[chosenShow].name,
-      seenIt: true
+      seenIt: true,
+      posterPath: $rootScope.shows[chosenShow].poster_path,
+      backgroundPath: $rootScope.shows[chosenShow].backdrop_path,
+      showDescription: $rootScope.shows[chosenShow].overview,
     }
 
 
