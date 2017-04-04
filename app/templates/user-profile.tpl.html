@@ -53,7 +53,7 @@
 
       <div ng-repeat="review in user" class="review-box">
 
-          <!-- <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image"> -->
+          <img class="review-image inline" ng-src="http://image.tmdb.org/t/p/w130/{{review.posterPath}}"" alt="no image">
         <a href="#!/review/{{review.showId}}/{{review.userId}}">
           <div class="inline review-text">
             <div>{{review.User.userName}}'s review:</div>

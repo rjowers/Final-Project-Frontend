@@ -1,6 +1,6 @@
 import { token } from "../token"
 
-function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $location, $window, ) {
+function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $location, $window, $stateParams ) {
 
   $scope.submit = function(data){
     console.log(data)
@@ -25,9 +25,19 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   AccountService.me().then(resp => {
       //console.log(resp.data.id)
       $scope.userId = resp.data.id
+      console.log($scope.userId);
       }).catch(error => {
           console.log(error);
-    });
+    }).then(
+
+    $http.get(`${SERVER}/userreviews/${$scope.userId}`).then(resp => {
+      $scope.user = resp.data;
+      console.log(resp.data)
+      $scope.profileUrl = resp.data[0].User.profileUrl;
+      // console.log($scope.profileUrl);
+      //
+    }));
+
 
 
 // console.log('here')
@@ -75,6 +85,6 @@ var token = req.headers[‘access-token’] || req.query.access_token;
 // }
 };
 
-  menuController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$location', '$window',] ;
+  menuController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$location', '$window', '$stateParams'] ;
 
   export default menuController;
