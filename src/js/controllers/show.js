@@ -71,9 +71,6 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       //   })
 
       );
-
-      })
-
   };
 }
 
