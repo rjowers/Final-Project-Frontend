@@ -57,19 +57,11 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       showDescription: $rootScope.shows[chosenShow].overview
     }
 
-
     AccountService.addReview(reviewInfo).then(resp => {
-
+        $scope.test2.push(resp.data);
         }).catch(error => {
             console.log(error);
-      }).then(
-
-      $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
-          console.log(resp.data)
-          $scope.test2 = resp.data;
-        })
-
-      );
+      })
   };
 }
 
