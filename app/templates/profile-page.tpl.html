@@ -1,12 +1,93 @@
 <!-- <div class="profile-background" ng-style="{'background-image':url("http://wallpapercave.com/wp/mlGFLlB.jpg")}">
 </div> -->
 <div class="profile-background-container">
-<img class ="profile-background" src="http://wallpapercave.com/wp/mlGFLlB.jpg">
+<img class ="profile-background" src="{{GetReviews[0].User.backgroundUrl}}">
+<div class="fade-box">
+  <a class="followers" ng-click="modal()">Followers:{{GetFollowers.length}}</a>
+  <a class="following" ng-click="FollowingModal()">Following:{{GetFollowing.length}}</a>
+
+
+  <div class="modal" ng-class="modalToggle">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+
+
+<h1 ="modal-title">Followers</h1>
+
+<div class="columns">
+  <div class="column" ng-repeat="follower in GetFollowers">
+    <figure class="image is-1by1 follower-images">
+      <!-- <a href="#!/show/{{photo.id}}"> -->
+        <img class="image-main follower-image" ng-src="{{follower.User.profileUrl}}"  alt="Image"
+        ng-mouseover="hover=true" ng-mouseleave="hover=false">
+      <!-- </a> -->
+      <p class="modal-title">{{follower.User.userName}}</p>
+    </figure>
+</div>
+
+
+
+
+    </div>
+    <button class="modal-close" ng-click="close()"></button>
+      </div>
+
+
+
+
+
+ </div>
+
+
+ <div class="modal" ng-class="FollowingModalToggle">
+   <div class="modal-background"></div>
+   <div class="modal-content">
+
+
+ <h1 ="modal-title">Following</h1>
+
+ <div class="columns">
+ <div class="column" ng-repeat="following in GetFollowing">
+   <figure class="image is-1by1 follower-images">
+     <!-- <a href="#!/show/{{photo.id}}"> -->
+       <img class="image-main follower-image" ng-src="{{following.User.profileUrl}}"  alt="Image"
+       ng-mouseover="hover=true" ng-mouseleave="hover=false">
+     <!-- </a> -->
+   </figure>
+ </div>
+
+
+
+
+   </div>
+   <button class="modal-close" ng-click="FollowingClose()"></button>
+     </div>
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
 <p class="username">{{GetReviews[0].User.userName}}</p>
 </div>
 <!-- <figure class="image pic-container"> -->
   <img class="profilepage-pic" ng-src="{{GetReviews[0].User.profileUrl}}">
 <!-- </figure> -->
+
+<div class="block">
+  <a class="button follow-button" ng-click="follow()">Follow</a>
+</div>
+
 <div class="review-container">
   <!-- <div class ="show-pic-container">
       <img class ="show-pic" src="http://image.tmdb.org/t/p/w130//wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg">
