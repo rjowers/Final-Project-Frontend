@@ -4,12 +4,63 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.GetReviews = resp.data;
-        console.log(resp.data)
+        // console.log(resp.data)
       }
     }
 
   });
 
+
+
+
+$scope.follow = function (){
+console.log("inside")
+var data ={};
+  $http.post(`${SERVER}/follow/${$stateParams.user}`,data, {
+      headers: AccountService.token()
+      }).then(resp => {
+      console.log(resp);
+  });
+};
+
+
+  $http.get(`${SERVER}/followers/${$stateParams.user}`).then(resp => {
+        $scope.GetFollowing = resp.data;
+        console.log(resp.data)
+
+      });
+
+  $http.get(`${SERVER}/following/${$stateParams.user}`).then(resp => {
+        $scope.GetFollowers = resp.data;
+        console.log(resp.data)
+          });
+
+
+          $scope.modal = function (){
+            $scope.modalToggle = "is-active";
+          }
+
+
+          $scope.close = function (){
+            $scope.modalToggle = "";
+          }
+
+          $scope.FollowingModal = function (){
+            $scope.FollowingModalToggle = "is-active";
+          }
+
+          $scope.FollowingClose = function (){
+            $scope.FollowingModalToggle = "";
+          }
+
+
+  // $http.get(`${SERVER}/userreviews/${$stateParams.userId}`).then(resp => {
+  //   $scope.user = resp.data;
+  //   console.log(resp.data)
+  //   $scope.profileUrl = resp.data[0].User.profileUrl;
+  //   console.log($scope.profileUrl);
+  //   //
+  // });
 
       // function getShow (showId) {
       //   for(var count = 0; count < $rootScope.shows.length; count++){
