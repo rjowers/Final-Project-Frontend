@@ -6,7 +6,7 @@ function Config ($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/home.tpl.html',
         controller: 'HomeController'
       })
-      
+
         // .state('root', {
         //   abstract: true,
         //   templateUrl: 'templates/layout.tpl.html',
@@ -41,6 +41,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           url: '/not-found',
           //controller: 'ReviewController',
           templateUrl: 'templates/not-found.tpl.html'
+        })
+        .state('results', {
+          url: '/results',
+          controller: 'menuController',
+          templateUrl: 'templates/results.tpl.html'
         })
         .state('review', {
           url: '/review/:id/:user',
