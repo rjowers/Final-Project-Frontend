@@ -17,16 +17,13 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     }
   )}
 
-
-
-
-  // getData.then(function (data) {
-  //   // code
-  // })
-  //
-  // getData.then(data => {
-  //   // code
-  // })
+  $scope.choose = function(results){
+    console.log(results);
+    $rootScope.shows.push(results);
+    $window.location.href = `#!/show/${results.id}`;
+    // console.log('hello')
+    // console.log($rootScope.shows)
+  }
 
 
   AccountService.me()

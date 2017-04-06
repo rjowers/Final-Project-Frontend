@@ -1,5 +1,5 @@
 <div class="search-results" ng-repeat="results in searchResults">
   {{results.name}}
-  <img ng-src="http://image.tmdb.org/t/p/w130//{{results.poster_path}}"/>
+  <img ng-click="choose(results)" ng-src="http://image.tmdb.org/t/p/w130//{{results.poster_path}}"/>
   {{results.overview}}
 </div>
