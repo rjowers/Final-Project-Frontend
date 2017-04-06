@@ -467,20 +467,31 @@ hr{
 
 .follower-images{
 border-radius: 50%;
-height: 50px;
-width: 100px;
+height: 100px;
+width:100px;
 }
 
 .follower-image{
 border-radius: 50%;
-height: 50px;
-width: 100px;
+// height: 50px;
+// width: 100px;
 }
 
 .modal-card-body{
   height: 500px;
   border-radius: 25px;
 }
+
+img.image-main.follower-image{
+  // border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+// .image.is-square img, .image.is-1by1 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-16by9 img, .image.is-2by1 img {
+//   height: 50px;
+//   width: 100px;
+// }
 
 
 //////user-profile////////
@@ -668,6 +679,12 @@ strong{
   color: white;
 }
 
+.footer-home:hover{
+  text-decoration: underline;
+  color: white;
+
+}
+
 .footer-about{
   border-right: solid 1px;
   padding-right: 30px;
@@ -675,9 +692,21 @@ strong{
   color: white;
 }
 
+.footer-about:hover{
+  text-decoration: underline;
+  color: white;
+
+}
+
 .footer-profile{
   font-size: 20px;
   color: white;
+}
+
+.footer-profile:hover{
+  text-decoration: underline;
+  color: white;
+
 }
 
 .footer-content{

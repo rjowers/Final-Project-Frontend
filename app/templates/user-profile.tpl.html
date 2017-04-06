@@ -2,9 +2,77 @@
 <img class ="profile-background" src="{{user[0].User.backgroundUrl}}">
 
 
-  <a class="followers">Followers:</a>
-  <a class="following">Following:</a>
+
+<div class="fade-box">
+  <a class="followers" ng-click="Followermodal()">Followers:{{GetFollowers.length}}</a>
+  <a class="following" ng-click="FollowingModal()">Following:{{GetFollowing.length}}</a>
+
+
+  <div class="modal" ng-class="modalToggle">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+
+      <section class="modal-card-body">
+
+
+
+<div class="columns is-multiline">
+  <div class="column" ng-repeat="followers in GetFollowers">
+    <figure class="image is-1by1 follower-images">
+      <!-- <a href="#!/show/{{photo.id}}"> -->
+        <img class="image-main follower-image" ng-src="{{followers.following.profileUrl}}"  alt="Image"
+        ng-mouseover="hover=true" ng-mouseleave="hover=false">
+
+      <!-- </a> -->
+    </figure>
+    <p class="modal-userName">{{followers.following.userName}}</p>
+
+</div>
+    </div>
+</section>
+    <button class="modal-close" ng-click="Followerclose()"></button>
+      </div>
+
+
+
+
+
  </div>
+
+
+ <div class="modal" ng-class="FollowingModalToggle">
+   <div class="modal-background"></div>
+   <div class="modal-card">
+
+<section class="modal-card-body">
+
+
+
+ <div class="columns is-multiline">
+ <div class="column" ng-repeat="following in GetFollowing">
+   <figure class="image is-1by1 follower-images">
+     <!-- <a href="#!/show/{{photo.id}}"> -->
+       <img class="image-main follower-image" ng-src="{{following.followers.profileUrl}}"  alt="Image"
+       ng-mouseover="hover=true" ng-mouseleave="hover=false">
+     <!-- </a> -->
+   </figure>
+ </div>
+   </div>
+</section>
+
+   <button class="modal-close" ng-click="FollowingClose()"></button>
+     </div>
+
+
+
+
+
+ </div>
+
+
+ </div>
+
+
 
 
 <p class="username">{{user[0].User.userName}}</p>
@@ -32,7 +100,7 @@
   </div>
 
 
-  <div class="modal" ng-class="modalToggle">
+  <div class="modal" ng-class="FollowerModalToggle">
     <div class="modal-background"></div>
     <div class="modal-content">
     <!-- <div class =" addprofile" ng-show="myVar"> -->
@@ -68,6 +136,17 @@
     </div>
     <button class="modal-close" ng-click="close()"></button>
       </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

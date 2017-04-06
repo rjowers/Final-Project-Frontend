@@ -25,24 +25,24 @@ var data ={};
 
 
   $http.get(`${SERVER}/followers/${$stateParams.user}`).then(resp => {
-        $scope.GetFollowing = resp.data;
+        $scope.GetFollowers = resp.data;
         console.log(resp.data)
 
       });
 
   $http.get(`${SERVER}/following/${$stateParams.user}`).then(resp => {
-        $scope.GetFollowers = resp.data;
+        $scope.GetFollowing = resp.data;
         console.log(resp.data)
           });
 
 
           $scope.modal = function (){
-            $scope.modalToggle = "is-active";
+            $scope.FollowerModalToggle = "is-active";
           }
 
 
           $scope.close = function (){
-            $scope.modalToggle = "";
+            $scope.FollowerModalToggle = "";
           }
 
           $scope.FollowingModal = function (){
