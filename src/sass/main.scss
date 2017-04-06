@@ -642,3 +642,58 @@ input{
 .pic:hover {
 border:  2px solid hsla(0,0%,100%,.25);
 }
+
+
+
+////////////footer///////
+.footer{
+  background-color: #333333;
+  margin-top: 200px;
+  height: 170px;
+
+
+strong{
+  color: #c61017;
+}
+}
+
+.footer-links{
+  word-spacing: 30px;
+}
+
+.footer-home{
+  border-right: solid 1px;
+  padding-right: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.footer-about{
+  border-right: solid 1px;
+  padding-right: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.footer-profile{
+  font-size: 20px;
+  color: white;
+}
+
+.footer-content{
+  color: white;
+a{
+  color: #e5e5e5;
+
+}
+
+.us-links{
+  color: #e5e5e5;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: #c61017;
+}
+
+}
