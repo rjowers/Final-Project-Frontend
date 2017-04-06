@@ -34,6 +34,8 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
 
 
+
+
   // $scope.toggle = function() {
   //   console.log($cookies.get('user-id') === $stateParams.userid);
   //   if ($cookies.get('user-id') === $stateParams.userid) {
@@ -64,6 +66,37 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
   // GetReviews();
 
+
+
+
+  $http.get(`${SERVER}/followers/${$stateParams.userId}`).then(resp => {
+        $scope.GetFollowers = resp.data;
+        console.log(resp.data)
+
+      });
+
+  $http.get(`${SERVER}/following/${$stateParams.userId}`).then(resp => {
+        $scope.GetFollowing = resp.data;
+        console.log(resp.data)
+          });
+
+
+          $scope.Followermodal = function (){
+            $scope.modalToggle = "is-active";
+          }
+
+
+          $scope.Followerclose = function (){
+            $scope.modalToggle = "";
+          }
+
+          $scope.FollowingModal = function (){
+            $scope.FollowingModalToggle = "is-active";
+          }
+
+          $scope.FollowingClose = function (){
+            $scope.FollowingModalToggle = "";
+          }
 
 
 
