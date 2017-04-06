@@ -3,32 +3,31 @@
 <div class="profile-background-container">
 <img class ="profile-background" src="{{GetReviews[0].User.backgroundUrl}}">
 <div class="fade-box">
-  <a class="followers" ng-click="modal()">Followers:{{GetFollowers.length}}</a>
-  <a class="following" ng-click="FollowingModal()">Following:{{GetFollowing.length}}</a>
+  <a class="followers" ng-click="modal()">Following:{{GetFollowing.length}}</a>
+  <a class="following" ng-click="FollowingModal()">Followers:{{GetFollowers.length}}</a>
 
 
   <div class="modal" ng-class="modalToggle">
     <div class="modal-background"></div>
-    <div class="modal-content">
+    <div class="modal-card">
+
+      <section class="modal-card-body">
 
 
 <h1 ="modal-title">Followers</h1>
 
-<div class="columns">
-  <div class="column" ng-repeat="follower in GetFollowers">
+<div class="columns is-multiline">
+  <div class="column" ng-repeat="following in GetFollowing">
     <figure class="image is-1by1 follower-images">
       <!-- <a href="#!/show/{{photo.id}}"> -->
-        <img class="image-main follower-image" ng-src="{{follower.User.profileUrl}}"  alt="Image"
+        <img class="image-main follower-image" ng-src="{{following.User.profileUrl}}"  alt="Image"
         ng-mouseover="hover=true" ng-mouseleave="hover=false">
       <!-- </a> -->
       <p class="modal-title">{{follower.User.userName}}</p>
     </figure>
 </div>
-
-
-
-
     </div>
+</section>
     <button class="modal-close" ng-click="close()"></button>
       </div>
 
@@ -41,25 +40,25 @@
 
  <div class="modal" ng-class="FollowingModalToggle">
    <div class="modal-background"></div>
-   <div class="modal-content">
+   <div class="modal-card">
+
+<section class="modal-card-body">
 
 
  <h1 ="modal-title">Following</h1>
 
- <div class="columns">
- <div class="column" ng-repeat="following in GetFollowing">
+ <div class="columns is-multiline">
+ <div class="column" ng-repeat="followers in GetFollowers">
    <figure class="image is-1by1 follower-images">
      <!-- <a href="#!/show/{{photo.id}}"> -->
-       <img class="image-main follower-image" ng-src="{{following.User.profileUrl}}"  alt="Image"
+       <img class="image-main follower-image" ng-src="{{followers.User.profileUrl}}"  alt="Image"
        ng-mouseover="hover=true" ng-mouseleave="hover=false">
      <!-- </a> -->
    </figure>
  </div>
-
-
-
-
    </div>
+</section>
+
    <button class="modal-close" ng-click="FollowingClose()"></button>
      </div>
 
