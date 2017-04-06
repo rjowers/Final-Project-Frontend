@@ -4,11 +4,11 @@
 
 
 <div class="fade-box">
-  <a class="followers" ng-click="Followermodal()">Followers:{{GetFollowers.length}}</a>
+  <a class="followers" ng-click="FollowerModal()">Followers:{{GetFollowers.length}}</a>
   <a class="following" ng-click="FollowingModal()">Following:{{GetFollowing.length}}</a>
 
 
-  <div class="modal" ng-class="modalToggle">
+  <div class="modal" ng-class="FollowerModalToggle">
     <div class="modal-background"></div>
     <div class="modal-card">
 
@@ -19,11 +19,11 @@
 <div class="columns is-multiline">
   <div class="column" ng-repeat="followers in GetFollowers">
     <figure class="image is-1by1 follower-images">
-      <!-- <a href="#!/show/{{photo.id}}"> -->
+      <a href="#!/profile-page/{{followers.following.id}}">
         <img class="image-main follower-image" ng-src="{{followers.following.profileUrl}}"  alt="Image"
         ng-mouseover="hover=true" ng-mouseleave="hover=false">
 
-      <!-- </a> -->
+      </a>
     </figure>
     <p class="modal-userName">{{followers.following.userName}}</p>
 
@@ -51,10 +51,10 @@
  <div class="columns is-multiline">
  <div class="column" ng-repeat="following in GetFollowing">
    <figure class="image is-1by1 follower-images">
-     <!-- <a href="#!/show/{{photo.id}}"> -->
+     <a href="#!/profile-page/{{following.followers.id}}">
        <img class="image-main follower-image" ng-src="{{following.followers.profileUrl}}"  alt="Image"
        ng-mouseover="hover=true" ng-mouseleave="hover=false">
-     <!-- </a> -->
+     </a>
    </figure>
  </div>
    </div>
@@ -100,7 +100,7 @@
   </div>
 
 
-  <div class="modal" ng-class="FollowerModalToggle">
+  <div class="modal" ng-class="modalToggle">
     <div class="modal-background"></div>
     <div class="modal-content">
     <!-- <div class =" addprofile" ng-show="myVar"> -->

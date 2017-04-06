@@ -81,13 +81,13 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
           });
 
 
-          $scope.Followermodal = function (){
-            $scope.modalToggle = "is-active";
+          $scope.FollowerModal = function (){
+            $scope.FollowerModalToggle = "is-active";
           }
 
 
           $scope.Followerclose = function (){
-            $scope.modalToggle = "";
+            $scope.FollowerModalToggle = "";
           }
 
           $scope.FollowingModal = function (){
