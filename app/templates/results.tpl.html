@@ -1,5 +1,5 @@
-<!-- <div class="search-results" ng-repeat="results in searchResults">Hello{{results.name}}</div>
-<img src="https://static.pexels.com/photos/7720/night-animal-dog-pet.jpg"> -->
-<div class="search-results">where is my text{{test}}</div>
-<div class="test" ng-repeat="results in searchResults"><p>Hello{{results.name}}</p></div>
-<!-- <div ng-repeat="review in myReviews"><p>second one</p></div> -->
+<div class="search-results" ng-repeat="results in searchResults">
+  {{results.name}}
+  <img ng-src="http://image.tmdb.org/t/p/w130//{{results.poster_path}}"/>
+  {{results.overview}}
+</div>
