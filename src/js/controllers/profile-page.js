@@ -37,12 +37,12 @@ var data ={};
 
 
           $scope.modal = function (){
-            $scope.FollowerModalToggle = "is-active";
+            $scope.modalToggle = "is-active";
           }
 
 
           $scope.close = function (){
-            $scope.FollowerModalToggle = "";
+            $scope.modalToggle = "";
           }
 
           $scope.FollowingModal = function (){

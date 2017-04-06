@@ -18,11 +18,11 @@
 <div class="columns is-multiline">
   <div class="column" ng-repeat="followers in GetFollowers">
     <figure class="image is-1by1 follower-images">
-      <!-- <a href="#!/show/{{photo.id}}"> -->
+      <a href="#!/profile-page/{{followers.following.id}}">
         <img class="image-main follower-image" ng-src="{{followers.following.profileUrl}}"  alt="Image"
         ng-mouseover="hover=true" ng-mouseleave="hover=false">
 
-      <!-- </a> -->
+      </a>
     </figure>
     <p class="modal-userName">{{followers.following.userName}}</p>
 
@@ -50,10 +50,10 @@
  <div class="columns is-multiline">
  <div class="column" ng-repeat="following in GetFollowing">
    <figure class="image is-1by1 follower-images">
-     <!-- <a href="#!/show/{{photo.id}}"> -->
+     <a href="#!/profile-page/{{following.followers.id}}">
        <img class="image-main follower-image" ng-src="{{following.followers.profileUrl}}"  alt="Image"
        ng-mouseover="hover=true" ng-mouseleave="hover=false">
-     <!-- </a> -->
+     </a>
    </figure>
  </div>
    </div>
