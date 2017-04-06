@@ -1,19 +1,50 @@
-
+import { token } from "../token";
 
 function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams) {
-  function getShow () {
-    for(var count = 0; count < $rootScope.shows.length; count++){
+  $scope.info = null;
 
-      if($rootScope.shows[count].id == $stateParams.showId){
-        return count;
-      }
-    }
+  function init () {
+    $http.get(`https://api.themoviedb.org/3/tv/${$stateParams.showId}?api_key=${token}&language=en-US`).then(resp => {
+      // myData = resp.data;
+      $scope.info = resp.data
+      let fullUrl =  "http://image.tmdb.org/t/p/w650" + $scope.info.backdrop_path;
+      $scope.fullUrl = `url("${fullUrl}")`;
+      console.log(resp.data.backdrop_path);
+      // console.log(resp.data)
+      // console.log(myData)
+      // myData.muff = 0;
+    });
   }
-  var chosenShow = getShow();
 
-  $scope.info = $rootScope.shows[chosenShow];
-  $scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $rootScope.shows[chosenShow].backdrop_path;
+  init();
+
+
+  //console.log($scope.info)
+  //console.log($scope.info)
+  //setTimeout(function(){ console.log($scope.info); }, 3000);
+  // function getShow () {
+  //   for(var count = 0; count < $rootScope.shows.length; count++){
+  //
+  //     if($rootScope.shows[count].id == $stateParams.showId){
+  //       return count;
+  //     }
+  //   }
+  //   $http.get(`https://api.themoviedb.org/3/tv/${$stateParams.showId}?api_key=${token}&language=en-US`).then(resp => {
+  //       $rootScope.shows.push(resp.data);
+  //       console.log($rootScope.shows)
+  //     });
+  //     return 20;
+  //   //run search to tmdb add to rootScope
+  // }
+//  var chosenShow = getShow();
+  // console.log(chosenShow)
+  // console.log($rootScope.shows[20])
+  // console.log($rootScope.shows)
+  // $scope.info = $rootScope.shows[chosenShow];
+  //$scope.fullUrl = "http://image.tmdb.org/t/p/w650//" + $scope.info.backdrop_path;
   //console.log($scope.fullUrl)
+
+  //$scope.fullUrl = "http://image.tmdb.org/t/p/w650//h1qyblc5p9G3ZWIVK8ZrkpxcXgO.jpg"
 
   $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
       console.log(resp.data)
@@ -50,11 +81,11 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       review: data.text,
       ranking: ratingNumber,
       showId: $stateParams.showId,
-      showName: $rootScope.shows[chosenShow].name,
+      showName: $scope.info.name,
       seenIt: true,
-      posterPath: $rootScope.shows[chosenShow].poster_path,
-      backgroundPath: $rootScope.shows[chosenShow].backdrop_path,
-      showDescription: $rootScope.shows[chosenShow].overview
+      posterPath: $scope.info.poster_path,
+      backgroundPath: $scope.info.backdrop_path,
+      showDescription: $scope.info.overview
     }
 
     AccountService.addReview(reviewInfo).then(resp => {
