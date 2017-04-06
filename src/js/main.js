@@ -13,6 +13,7 @@ import UserProfileController from './controllers/user-profile.js';
 import ProfilePageController from './controllers/profile-page.js';
 import ReviewController from './controllers/review.js';
 import menuController from './controllers/menu.js';
+import testNewsController from './controllers/testnews.js'
 import SERVER from './server';
 import setup from './setup';
 
@@ -32,6 +33,7 @@ angular
     .controller('ProfilePageController', ProfilePageController)
     .controller('ReviewController', ReviewController)
     .controller('menuController', menuController)
+    .controller('testNewsController', testNewsController)
 
 
 //import { token } from "./token";
