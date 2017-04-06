@@ -4,8 +4,8 @@
 
 
 <div class="fade-box">
-  <a class="followers" ng-click="FollowerModal()">Followers:{{GetFollowers.length}}</a>
-  <a class="following" ng-click="FollowingModal()">Following:{{GetFollowing.length}}</a>
+  <a class="followers" ng-click="FollowerModal()"><p class="follower-count">{{GetFollowers.length}}</p><p>Followers</p></a>
+  <a class="following" ng-click="FollowingModal()"><p class="following-count">{{GetFollowing.length}}</p><p>Following:</p></a>
 
 
   <div class="modal" ng-class="FollowerModalToggle">
@@ -56,6 +56,8 @@
        ng-mouseover="hover=true" ng-mouseleave="hover=false">
      </a>
    </figure>
+   <p class="modal-userName">{{following.followers.userName}}</p>
+
  </div>
    </div>
 </section>
@@ -96,15 +98,13 @@
 
   <div class ="profile">
 
-    <a class="addphoto"  ng-click="modal()" >Add Image</a>
+    <a class="addphoto"  ng-click="modal()" >Edit</a>
   </div>
 
 
   <div class="modal" ng-class="modalToggle">
     <div class="modal-background"></div>
     <div class="modal-content">
-    <!-- <div class =" addprofile" ng-show="myVar"> -->
-    <!-- <div class =" addprofile" > <!--  User this to see form without toggle --> -->
 
       <div class="columns form-container">
           <div class="column"></div>
@@ -132,7 +132,6 @@
           </div>
           <div class="column"></div>
       </div>
-    <!-- </div> -->
     </div>
     <button class="modal-close" ng-click="close()"></button>
       </div>
@@ -165,7 +164,6 @@
           <p class="title">{{review.showName}} {{review.ranking}}<img class="star" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png">
           <p>
 
-            <!-- <div class="ranking-container"> {{review.ranking}}<img class="star" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png"> -->
             <p class="userpage-reviewtext">{{review.review}}</p>
 
           </div>
