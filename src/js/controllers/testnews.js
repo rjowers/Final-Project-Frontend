@@ -4,10 +4,13 @@ function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope
 
   $http.get(`${SERVER}/news/1`).then(resp => {
       console.log(resp.data)
+      $scope.news = resp.data
       // if(resp.data.newsType === "follow"){
       //   $scope.newsItem =
       // }
     });
+
+    
 
 };
 
