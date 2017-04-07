@@ -1,11 +1,15 @@
 <div class="profile-background-container">
-<img class ="profile-background" src="{{user[0].User.backgroundUrl}}">
+<!-- <object data="http://wallpapercave.com/wp/BOMZ8R8.jpg" type="image/jpg"> -->
+  <img class ="profile-background" src="{{user[0].backgroundUrl}}" alt="Image not found">
+
+<!-- </object> -->
+
 
 
 
 <div class="fade-box">
-  <a class="followers" ng-click="FollowerModal()"><p class="follower-count">{{GetFollowers.length}}</p><p>Followers</p></a>
-  <a class="following" ng-click="FollowingModal()"><p class="following-count">{{GetFollowing.length}}</p><p>Following:</p></a>
+  <a class="followers" ng-click="FollowerModal()"><p>Followers</p><p class="follower-count">{{GetFollowers.length}}</p></a>
+  <a class="following" ng-click="FollowingModal()"><p>Following</p><p class="following-count">{{GetFollowing.length}}</p></a>
 
 
   <div class="modal" ng-class="FollowerModalToggle">
@@ -77,7 +81,7 @@
 
 
 
-<p class="username">{{user[0].User.userName}}</p>
+<p class="username">{{user[0].userName}}</p>
 
 
 
@@ -89,7 +93,7 @@
 
 <figure class="image pic-container">
   <!-- <object data="../images/Default-Profile.jpg"> -->
-  <img class="profile-pic" src="{{user[0].User.profileUrl}}">
+  <img class="profile-pic" src="{{user[0].profileUrl}}">
   <!-- <a class="change" href=""> Change Image</a> -->
 </figure>
 
@@ -156,7 +160,7 @@
 
     <div class="userpage-reviews">Reviews
 
-      <div ng-repeat="review in user" class="userpage-reviewbox">
+      <div ng-repeat="review in UserReviews" class="userpage-reviewbox">
 
           <img class="userpage-reviewimage" ng-src="http://image.tmdb.org/t/p/w130/{{review.posterPath}}" alt="no image">
         <a href="#!/review/{{review.showId}}/{{review.userId}}">

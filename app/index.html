@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body ng-app="app">
       <nav class="nav has-shadow nav">
@@ -38,7 +39,8 @@
           Profile
         </a>
         <a class="nav-item is-tab" href="#!/sign-up">Sign Up</a>
-        <a class="nav-item is-tab" href="#!/sign-in">Sign In</a>
+        <a class="nav-item is-tab" href="#!/sign-in" ng-show="!loggedIn">Sign In</a>
+        <a class="nav-item is-tab" href="#" ng-click="logout()" ng-show="loggedIn">Log Out</a>
         <div>
           <form ng-submit="submit(search)">
             <input class="search" placeholder="Search" ng-model="search.text">
