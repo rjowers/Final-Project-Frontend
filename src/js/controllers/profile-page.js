@@ -20,6 +20,8 @@ var data ={};
       headers: AccountService.token()
       }).then(resp => {
       console.log(resp);
+      $rootScope.followed = true;
+
   });
 };
 
