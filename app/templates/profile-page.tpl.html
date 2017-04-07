@@ -87,7 +87,9 @@
 <!-- </figure> -->
 
 <div class="block">
-  <a class="button follow-button" ng-click="follow()">Follow</a>
+  <a class="button follow-button" ng-click="follow()" ng-show="!followed">Follow</a>
+  <a class="button follow-button"  ng-show="followed">Unfollow</a>
+
 </div>
 
 <div class="review-container">
