@@ -42,6 +42,12 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     .catch(error => {
           console.log(error);
     })
+
+    $scope.logout = function(){
+    $cookies.remove('access-token');
+    $cookies.remove('userId');
+    $rootScope.loggedIn = false;
+  }
 };
 
   menuController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$location', '$window', '$stateParams'] ;

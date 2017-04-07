@@ -7,7 +7,11 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
   function init () {
 
     $http.get(`${SERVER}/userreviews/${$stateParams.userId}`).then(resp => {
-      $scope.user = resp.data;
+      $http.get(`${SERVER}/users/${$stateParams.userId}`).then(resp => {
+        $scope.user = resp.data;
+        console.log(resp.data)
+      })
+      $scope.UserReviews = resp.data;
       console.log(resp.data)
       $scope.profileUrl = resp.data[0].User.profileUrl;
       console.log($scope.profileUrl);
