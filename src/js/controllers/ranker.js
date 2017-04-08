@@ -44,6 +44,27 @@ getShow(firstShowPage, firstShowShow)
 getShow(secondShowPage, secondShowShow)
 console.log($scope.myChoice)
 
+$scope.chooseShow = function (show){
+  console.log(show)
+
+  //take chosen show.id see if it's in testArray
+  //take second show.id see if it's in testArray
+
+  //if neither is in testArray put them in the middle of the list in order
+  console.log(Math.floor(testArray.length / 2))
+
+  //if chosen show is in the list and the second show is not
+  //put the second show in the middle if the chosen show is in the top half
+  //put the second show immediately underneath the chosen show if the chosen show is in the bottom half
+
+  //if second show is in the list and the chosen show is not
+  //put the chosen show immediately above the second show is the second show is in the top half
+  //put the chosen show in the middle is the seond show is in the bottom half of the list
+
+  //if both shows are on the list put the chosen show immediately above the second show is the second show is higher
+  //if the first show is higher no change to the list 
+}
+
 };
 
 rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService']
