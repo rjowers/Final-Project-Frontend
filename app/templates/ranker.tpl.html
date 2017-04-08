@@ -5,7 +5,7 @@
 <div class="inline user-choice">
     <div class="title-two-shows">Choose the one that you like better</div>
     <div class="inline two-shows" ng-repeat="choice in myChoice">
-      <img ng-src="http://image.tmdb.org/t/p/w130{{choice.poster_path}}"/>
+      <img ng-click="chooseShow(choice)" ng-src="http://image.tmdb.org/t/p/w130{{choice.poster_path}}"/>
       <div class="overview">{{choice.overview}}</div>
     </div>
 
