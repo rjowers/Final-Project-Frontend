@@ -742,6 +742,43 @@ input{
 border:  2px solid hsla(0,0%,100%,.25);
 }
 
+.news-feed{
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  margin-left: 650px;
+  bottom: 110px;
+
+.news-feed-head{
+  text-align: center;
+  font-size: 18px;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+}
+
+
+.news-image{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 15px;
+  right: 5px;
+  border-radius: 50%;
+      border: 1px solid hsla(0,0%,100%,.25);
+}
+
+.news-image:hover{
+  border:  2px solid #72d147;
+}
+
+.activity{
+  color: black;
+}
+
 
 
 ////////////footer///////
