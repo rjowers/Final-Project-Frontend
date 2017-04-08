@@ -5,7 +5,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
 
   var testArray = testString.split(",")
   $scope.myList = [];
-  
+  $scope.myChoice = [];
 
   for(var count = 0; count < testArray.length; count++){
     searchShow(testArray[count])
@@ -20,7 +20,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   function getShow(pageNum, show){
     $http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${token}&vote_count.gte=10&page=${pageNum}`)
     .then ( resp => {
-      console.log(resp.data.results[show])
+      $scope.myChoice.push(resp.data.results[show])
     })
   }
 
@@ -42,6 +42,7 @@ while(firstShowPage === secondShowPage && firstShowShow === secondShowShow){
 
 getShow(firstShowPage, firstShowShow)
 getShow(secondShowPage, secondShowShow)
+console.log($scope.myChoice)
 
 };
 
