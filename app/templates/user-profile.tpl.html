@@ -86,7 +86,25 @@
 
 
 
-
+<section class="modal-card-body news-feed">
+    <header class="modal-card-head news-feed-head">
+        <p class="modal-card-title">Recent Activity</p>
+    </header>
+      <div ng-repeat="item in news">
+        <div><p class ="activity">
+           <a href="#!/profile-page/{{item.User.id}}">
+             <img class="news-image" ng-src="{{item.User.profileUrl}}">
+           </a>
+           {{item.User.userName}}
+           {{item.newsType}}
+           {{item.Relationship.followedId}}
+           at {{item.createdAt}}
+          </p>
+        </div>
+        <br>
+        <hr>
+    </div>
+ </section>
 
 
 
@@ -181,9 +199,16 @@
 
 
 
-
-
-
+    <section class="modal-card-body news-feed">
+        <header class="modal-card-head news-feed-head">
+            <p class="modal-card-title">Recent Activity</p>
+        </header>
+          <div ng-repeat="item in news">
+            <div><p class ="activity">  <img class="news-image" ng-src="{{item.User.profileUrl}}">{{item.User.userName}} {{item.newsType}} {{item.Relationship.followedId}} at {{item.createdAt}}</p></div>
+            <br>
+            <hr>
+        </div>
+     </section>
 
 <!--
 <div class="columns feed-followers-container">

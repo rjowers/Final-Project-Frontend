@@ -1,6 +1,6 @@
 
 
-function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
+function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope, $stateParams, AccountService) {
   $scope.news = [];
   $scope.usersFollowed = [];
 
@@ -16,7 +16,7 @@ function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope
 
 
 //first get a list of all the ppl you are following useing this route => /following/:userId'
-  $http.get(`${SERVER}/following/2`).then(resp => {
+  $http.get(`${SERVER}/following/${$stateParams.userId}`).then(resp => {
       for(var count = 0; count < resp.data.length; count++){
         //console.log(resp.data[count].followedId);
         if(!$scope.usersFollowed.includes(resp.data[count].followedId)){
@@ -112,6 +112,6 @@ function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope
 
 };
 
-  testNewsController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService'];
+  testNewsController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', '$stateParams', 'AccountService'];
 
   export default testNewsController;

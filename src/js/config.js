@@ -48,7 +48,7 @@ function Config ($stateProvider, $urlRouterProvider) {
           templateUrl: 'templates/results.tpl.html'
         })
         .state('testnews', {
-          url: '/testnews',
+          url: '/testnews/:userId',
           controller: 'testNewsController',
           templateUrl: 'templates/testnews.tpl.html'
         })
