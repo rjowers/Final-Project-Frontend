@@ -14,7 +14,7 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
 
 
 $scope.follow = function (){
-console.log("inside")
+// console.log("inside")
 var data ={};
   $http.post(`${SERVER}/follow/${$stateParams.user}`,data, {
       headers: AccountService.token()
@@ -22,6 +22,14 @@ var data ={};
       console.log(resp);
       $rootScope.followed = true;
 
+  });
+};
+
+$scope.unfollow = function () {
+  $http.delete(`${SERVER}/deletefollowing/${$stateParams.user}`,{
+    headers: AccountService.token()
+  }).then(resp => {
+    $rootScope.unfollowed = true;
   });
 };
 
