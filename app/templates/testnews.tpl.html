@@ -1,8 +1,5 @@
-<div>Hello</div>
-<div ng-repeat="item in news">
 
-  <div>user{{item.userId}} who's name is {{item.User.userName}}</div>
-  <div>{{item.newsType}}</div>
-  <div>user{{item.Relationship.followedId}}</div>
+<div ng-repeat="item in news">
+  <div>{{item.User.userName}} {{item.newsType}} {{item.Relationship.followedId}} at {{item.createdAt}}</div>
   <br>
 </div>
