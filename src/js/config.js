@@ -52,6 +52,11 @@ function Config ($stateProvider, $urlRouterProvider) {
           controller: 'testNewsController',
           templateUrl: 'templates/testnews.tpl.html'
         })
+        .state('ranker', {
+          url: '/ranker/:userId',
+          controller: 'rankerController',
+          templateUrl: 'templates/ranker.tpl.html'
+        })
         .state('review', {
           url: '/review/:id/:user',
           controller: 'ReviewController',
