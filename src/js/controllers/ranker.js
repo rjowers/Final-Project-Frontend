@@ -1,15 +1,23 @@
 import { token } from "../token";
 
-function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
-  var testString = "1402,1399,1418,1622";
+function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams) {
 
-  var testArray = testString.split(",")
+  var testString;
+  //var testString = "1402,1399,1418,1622";
+  var listArray = [];
+  //var listArray = testString.split(",")
   $scope.myList = [];
   $scope.myChoice = [];
 
-  for(var count = 0; count < testArray.length; count++){
-    searchShow(testArray[count])
-  }
+
+  $http.get(`${SERVER}/getRankings/${$stateParams.userId}`).then(resp => {
+    console.log(resp.data[0].rankings)
+    testString = resp.data[0].rankings;
+    listArray = testString.split(",");
+    for(var count = 0; count < listArray.length; count++){
+      searchShow(listArray[count])
+    }
+  });
 
   function searchShow (input) {
     $http.get(`https://api.themoviedb.org/3/tv/${input}?api_key=${token}&language=en-US`).then(resp => {
@@ -47,11 +55,11 @@ console.log($scope.myChoice)
 $scope.chooseShow = function (show){
   console.log(show)
 
-  //take chosen show.id see if it's in testArray
-  //take second show.id see if it's in testArray
+  //take chosen show.id see if it's in listArray
+  //take second show.id see if it's in listArray
 
-  //if neither is in testArray put them in the middle of the list in order
-  console.log(Math.floor(testArray.length / 2))
+  //if neither is in listArray put them in the middle of the list in order
+  console.log(Math.floor(listArray.length / 2))
 
   //if chosen show is in the list and the second show is not
   //put the second show in the middle if the chosen show is in the top half
@@ -62,10 +70,10 @@ $scope.chooseShow = function (show){
   //put the chosen show in the middle is the seond show is in the bottom half of the list
 
   //if both shows are on the list put the chosen show immediately above the second show is the second show is higher
-  //if the first show is higher no change to the list 
+  //if the first show is higher no change to the list
 }
 
 };
 
-rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService']
+rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams']
   export default rankerController;
