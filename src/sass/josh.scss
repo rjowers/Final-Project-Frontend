@@ -61,10 +61,28 @@ div.description{
   text-align: center;
 }
 
-.review-link {
+.review-button{
   vertical-align: top;
-  font-size: 20;
-  color: #99AABB;
+  font-size: 30px;
+  color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.review-button:hover{
+  opacity: .9;
+
+}
+
+.review-button:focus {
+  outline: 0;
+
 }
 
 .review-image {
@@ -73,23 +91,51 @@ div.description{
   border-radius: 50%;
 }
 
+.review-image:hover{
+  border:  2px solid #72d147;
+
+}
+
 .review-box {
-  height: 40px;
+  height: 223px;
   font-size: 16px;
   text-align: left;
   vertical-align: top;
   padding-bottom: 60px;
-  border: 1px solid #99AABB;
+  border-bottom: 1px solid #99AABB;
+  margin-top: 20px;
 }
+
+
 
 .review-text {
   width: 94%;
+  height: 223px;
   font-size: 16px;
   text-align: left;
   vertical-align: top;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  // white-space: nowrap;
   overflow: hidden;
+}
+
+
+.review-info{
+  padding-top: -3px;
+  margin-bottom: 20px;
+  font-size: 24px;
+
+}
+.more{
+  // vertical-align: bottom;
+  margin-top: 143px;
+  margin-right: 4px;
+  float: right;
+  color: #8E9EAD;
+}
+
+.more:hover{
+  color: white;
 }
 
 ////////////////////////// review page /////////////////////
