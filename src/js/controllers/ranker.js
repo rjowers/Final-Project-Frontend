@@ -81,28 +81,84 @@ $scope.chooseShow = function (show){
   //if neither is in listArray put them in the middle of the list in order
   if(!firstChoiceListLocation && !secondChoiceListLocation){
     console.log("neither on list")
-    console.log(Math.floor(listArray.length / 2))
+    var putLocation = Math.floor(listArray.length / 2)
+    listArray.splice(putLocation, 0, secondChoiceId.toString());
+    listArray.splice(putLocation, 0, show.id.toString());
+    var data = listArray.toString();
+    console.log(data)
+    AccountService.updateRankings(data, $stateParams.userId).then(resp => {
+       console.log(resp)
+    })
+    .catch(error => {
+    console.log(error);
+    });
   }
 
   //if chosen show is in the list and the second show is not
-  if(firstChoiceListLocation && !secondChoiceListLocation){
-    console.log("first choice on list second choice not")
-  }
-
   //put the second show in the middle if the chosen show is in the top half
   //put the second show immediately underneath the chosen show if the chosen show is in the bottom half
+  if(firstChoiceListLocation && !secondChoiceListLocation){
+    console.log("first choice on list second choice not")
+    var putLocation = Math.floor(listArray.length / 2)
+    if(firstChoiceListLocation <= putLocation){
+      listArray.splice(putLocation, 0, secondChoiceId.toString());
+    }else{
+      listArray.splice(firstChoiceListLocation, 0, secondChoiceId.toString());
+    }
+    console.log(listArray)
+    var data = listArray.toString();
+    console.log(data)
+    AccountService.updateRankings(data, $stateParams.userId).then(resp => {
+       console.log(resp)
+    })
+    .catch(error => {
+    console.log(error);
+    });
+  }
+
+
 
   //if second show is in the list and the chosen show is not
+  //put the chosen show immediately above the second show is the second show is in the top half
+  //put the chosen show in the middle is the second show is in the bottom half of the list
   if(!firstChoiceListLocation && secondChoiceListLocation){
     console.log("second choice is on list first is not")
+    var putLocation = Math.floor(listArray.length / 2)
+    if(secondChoiceListLocation <= putLocation){
+      listArray.splice(secondChoiceListLocation - 1, 0, show.id.toString());
+    }else{
+      listArray.splice(putLocation, 0, show.id.toString())
+    }
+    console.log(listArray);
+    var data = listArray.toString();
+    console.log(data)
+    AccountService.updateRankings(data, $stateParams.userId).then(resp => {
+       console.log(resp)
+    })
+    .catch(error => {
+    console.log(error);
+    });
   }
-  //put the chosen show immediately above the second show is the second show is in the top half
-  //put the chosen show in the middle is the seond show is in the bottom half of the list
+
 
   //if both shows are on the list put the chosen show immediately above the second show is the second show is higher
   //if the first show is higher no change to the list
   if(firstChoiceListLocation && secondChoiceListLocation){
     console.log("both shows are on the list")
+    if(firstChoiceListLocation < secondChoiceListLocation){
+      listArray.splice(secondChoiceListLocation - 1, 0, show.id.toString());
+    }else{
+
+    }
+    console.log(listArray)
+    var data = listArray.toString();
+    console.log(data)
+    AccountService.updateRankings(data, $stateParams.userId).then(resp => {
+       console.log(resp)
+    })
+    .catch(error => {
+    console.log(error);
+    });
   }
 }
 
