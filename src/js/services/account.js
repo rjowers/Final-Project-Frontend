@@ -9,6 +9,7 @@ service.getReviewsShow = getReviewsShow;
 service.updateUser = updateUser;
 service.token = token
 service.me = me
+service.updateRankings = updateRankings;
 //service.addReview2 = addReview2;
 // service.seenit = seenit;
 // service.getshow = getshow;
@@ -42,7 +43,11 @@ function updateUser (data){
   });
 }
 
-
+function updateRankings (data, stateInfo){
+  return $http.put(`${SERVER}/updaterankings/${stateInfo}`, data, {
+    headers: getHeader()
+  });
+}
 
 function token (){
   return getHeader();
