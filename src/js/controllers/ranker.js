@@ -53,24 +53,57 @@ getShow(secondShowPage, secondShowShow)
 console.log($scope.myChoice)
 
 $scope.chooseShow = function (show){
-  console.log(show)
+  console.log(show.id) // equals first choice the show they picked out of the two
+  console.log(listArray) // what we have in our top show list
+  var secondChoiceId; // will equal the second choice what they didn't pick
+  console.log($scope.myChoice) // the two shows we can choose from
+  var firstChoiceListLocation;
+  var secondChoiceListLocation;
 
-  //take chosen show.id see if it's in listArray
-  //take second show.id see if it's in listArray
+// checks to see which id the second choice is
+  if(show.id === $scope.myChoice[0].id){
+    secondChoiceId = $scope.myChoice[1].id;
+  }else{
+    secondChoiceId = $scope.myChoice[0].id;
+  }
+
+  for(var count = 0; count < listArray.length; count++){
+    // check to see if the chosen show is in the top show list and where it is
+    if(show.id == listArray[count]){
+      firstChoiceListLocation = count + 1;
+    }
+    //check to see if second show is in the top show list and where it is
+    if(secondChoiceId == listArray[count]){
+      secondChoiceListLocation = count + 1;
+    }
+  }
 
   //if neither is in listArray put them in the middle of the list in order
-  console.log(Math.floor(listArray.length / 2))
+  if(!firstChoiceListLocation && !secondChoiceListLocation){
+    console.log("neither on list")
+    console.log(Math.floor(listArray.length / 2))
+  }
 
   //if chosen show is in the list and the second show is not
+  if(firstChoiceListLocation && !secondChoiceListLocation){
+    console.log("first choice on list second choice not")
+  }
+
   //put the second show in the middle if the chosen show is in the top half
   //put the second show immediately underneath the chosen show if the chosen show is in the bottom half
 
   //if second show is in the list and the chosen show is not
+  if(!firstChoiceListLocation && secondChoiceListLocation){
+    console.log("second choice is on list first is not")
+  }
   //put the chosen show immediately above the second show is the second show is in the top half
   //put the chosen show in the middle is the seond show is in the bottom half of the list
 
   //if both shows are on the list put the chosen show immediately above the second show is the second show is higher
   //if the first show is higher no change to the list
+  if(firstChoiceListLocation && secondChoiceListLocation){
+    console.log("both shows are on the list")
+  }
 }
 
 };
