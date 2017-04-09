@@ -20,7 +20,11 @@ var data ={};
       headers: AccountService.token()
       }).then(resp => {
       console.log(resp);
-      $rootScope.followed = true;
+      $cookies.followed = true;
+
+      if ($cookies.followed = true) {
+        $rootScope.followed = true;
+      }
 
   });
 };
@@ -29,7 +33,11 @@ $scope.unfollow = function () {
   $http.delete(`${SERVER}/deletefollowing/${$stateParams.user}`,{
     headers: AccountService.token()
   }).then(resp => {
-    $rootScope.unfollowed = true;
+    $cookies.unfollowed = true;
+
+    if ($cookies.unfollowed = true) {
+      $rootScope.unfollowed = true;
+    }
   });
 };
 
