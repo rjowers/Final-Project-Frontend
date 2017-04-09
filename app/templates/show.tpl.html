@@ -8,7 +8,7 @@
     <div class="description">{{info.overview}}</div>
   </div>
 
-  <div class="review-link inline" ng-click="modal()">Click here<br>to review</div>
+  <button class="review-button " ng-click="modal()">Review</button>
 
 
 
@@ -63,13 +63,17 @@
     <a href="#!/profile-page/{{review.User.id}}">
       <img class="review-image inline" ng-src="{{review.User.profileUrl}}" alt="no image">
     </a>
-    <a href="#!/review/{{review.showId}}/{{review.User.id}}">
+    <!-- <a href="#!/review/{{review.showId}}/{{review.User.id}}"> -->
       <div class="inline review-text">
-        <div>{{review.User.userName}}'s review:    {{review.ranking}} stars</div>
-        <div class="inline review-text">{{review.review}}</div>
+        <div class="review-info">{{review.User.userName}}'s review   {{review.ranking}} stars</div>
+        <div class="inline review-text">{{review.review}} </div>    <a class="more" href="#!/review/{{review.showId}}/{{review.User.id}}">...More</a>
+
+
       </div>
-    </a>
+
+    <!-- </a> -->
 
   </div>
+
 
 </div>
