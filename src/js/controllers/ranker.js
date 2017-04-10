@@ -1,6 +1,6 @@
 import { token } from "../token";
 
-function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams) {
+function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams, $window) {
 
   var testString;
   //var testString = "1402,1399,1418,1622";
@@ -14,16 +14,19 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     console.log(resp.data[0].rankings)
     testString = resp.data[0].rankings;
     listArray = testString.split(",");
-    console.log(listArray)
-    for(var count = 0; count < listArray.length; count++){
-      searchShow(listArray[count])
-    }
+    console.log(listArray);
+     // array of strings => array of promises => array of ShowData by waiting
+    var showData = Promise.all(listArray.map(searchShow));
+    showData.then(data => { $scope.myList = data; })
+    // for(var count = 0; count < listArray.length; count++){
+    //   searchShow(listArray[count])
+    // }
   });
 
   function searchShow (input) {
-    $http.get(`https://api.themoviedb.org/3/tv/${input}?api_key=${token}&language=en-US`).then(resp => {
-      $scope.myList.push(resp.data)
-      console.log($scope.myList)
+    return $http.get(`https://api.themoviedb.org/3/tv/${input}?api_key=${token}&language=en-US`).then(resp => {
+      return resp.data;
+//      console.log(resp.data, "here's my show");
     });
   }
 
@@ -86,12 +89,15 @@ $scope.chooseShow = function (show){
     var putLocation = Math.floor(listArray.length / 2)
     listArray.splice(putLocation, 0, secondChoiceId.toString());
     listArray.splice(putLocation, 0, show.id.toString());
+    console.log(listArray, "this is what we send the server")
     var data = {
       rankings: listArray.toString()
     }
-    console.log(data)
     AccountService.updateRankings(data, $stateParams.userId).then(resp => {
        console.log(resp)
+       //$window.location.href = `#!/ranker/${$stateParams.userId}`
+       //$state.reload();
+       $window.location.reload();
     })
     .catch(error => {
     console.log(error);
@@ -168,5 +174,5 @@ $scope.chooseShow = function (show){
 
 };
 
-rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams']
+rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams', '$window']
   export default rankerController;
