@@ -47,7 +47,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   //$scope.fullUrl = "http://image.tmdb.org/t/p/w650//h1qyblc5p9G3ZWIVK8ZrkpxcXgO.jpg"
 
   $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
-      console.log(resp.data)
+      console.log(resp.data, "init data")
       $scope.test2 = resp.data;
     });
 
@@ -91,9 +91,12 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
 
     AccountService.addReview(reviewInfo).then(resp => {
-        $scope.test2.push(resp.data);
-        }).then( $state.reload())
-        .catch(error => {
+
+        console.log(resp.data, "new review")
+        $scope.test2.unshift(resp.data);  //$window.location.href = `#!/show/${results.id}`
+        }).catch(error => {
+
+
             console.log(error);
 
       }).then(

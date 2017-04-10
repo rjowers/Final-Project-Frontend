@@ -14,6 +14,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     console.log(resp.data[0].rankings)
     testString = resp.data[0].rankings;
     listArray = testString.split(",");
+    console.log(listArray)
     for(var count = 0; count < listArray.length; count++){
       searchShow(listArray[count])
     }
@@ -22,6 +23,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   function searchShow (input) {
     $http.get(`https://api.themoviedb.org/3/tv/${input}?api_key=${token}&language=en-US`).then(resp => {
       $scope.myList.push(resp.data)
+      console.log($scope.myList)
     });
   }
 
@@ -38,13 +40,13 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-var firstShowPage = getRandomInt(0, 89)
+var firstShowPage = getRandomInt(0, 50)
 var firstShowShow = getRandomInt(0, 19)
-var secondShowPage = getRandomInt(0, 89)
+var secondShowPage = getRandomInt(0, 50)
 var secondShowShow = getRandomInt(0, 19)
 
 while(firstShowPage === secondShowPage && firstShowShow === secondShowShow){
-  secondShowPage = getRandomInt(0, 89)
+  secondShowPage = getRandomInt(0, 50)
   secondShowShow = getRandomInt(0, 19)
 }
 
@@ -84,7 +86,9 @@ $scope.chooseShow = function (show){
     var putLocation = Math.floor(listArray.length / 2)
     listArray.splice(putLocation, 0, secondChoiceId.toString());
     listArray.splice(putLocation, 0, show.id.toString());
-    var data = listArray.toString();
+    var data = {
+      rankings: listArray.toString()
+    }
     console.log(data)
     AccountService.updateRankings(data, $stateParams.userId).then(resp => {
        console.log(resp)
