@@ -88,9 +88,12 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       showDescription: $scope.info.overview
     }
 
+
+
     AccountService.addReview(reviewInfo).then(resp => {
         $scope.test2.push(resp.data);
-        }).catch(error => {
+        }).then( $state.reload())
+        .catch(error => {
             console.log(error);
 
       }).then(

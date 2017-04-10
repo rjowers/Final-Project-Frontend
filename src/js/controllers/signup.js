@@ -13,6 +13,7 @@ function signUpController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
    AccountService.signup(user).then(resp => {
 
       // console.log(resp);
+      $state.go('sign-in');
       console.log('user created');
     }).catch(error => {
         // console.log(error);

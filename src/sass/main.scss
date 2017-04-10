@@ -46,8 +46,14 @@ html{
 a:hover {
 color: white;
 border-bottom: solid;
-border-bottom-color: red;
 }
+
+
+}
+
+.nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+    border-bottom-color:  #c61017;
+    border-top-color: transparent;
 }
 
 .nav-left {
@@ -307,6 +313,7 @@ min-height: 100%;
 // }
 
 .landing-container{
+  // box-shadow: inset 0px -200px 0px black;
 
 }
 
@@ -314,6 +321,8 @@ min-height: 100%;
 img.landing {
   margin-top: 0px;
   opacity: .7;
+
+
   // position: absolute;
   //
   // clip: rect(0px,60px,800px,0px);
