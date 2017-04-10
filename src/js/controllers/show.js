@@ -1,6 +1,6 @@
 import { token } from "../token";
 
-function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams) {
+function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $stateParams, $window) {
   $scope.info = null;
 
   function init () {
@@ -93,7 +93,8 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     AccountService.addReview(reviewInfo).then(resp => {
 
         console.log(resp.data, "new review")
-        $scope.test2.unshift(resp.data);  //$window.location.href = `#!/show/${results.id}`
+        //$scope.test2.unshift(resp.data);  //$window.location.href = `#!/show/${results.id}`
+        $window.location.reload();
         }).catch(error => {
 
 
@@ -111,7 +112,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   };
 }
 
-ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams'];
+ShowController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams', '$window'];
 
 export default ShowController;
 
