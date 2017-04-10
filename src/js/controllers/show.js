@@ -88,10 +88,15 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       showDescription: $scope.info.overview
     }
 
+
+
     AccountService.addReview(reviewInfo).then(resp => {
+
         console.log(resp.data, "new review")
         $scope.test2.unshift(resp.data);  //$window.location.href = `#!/show/${results.id}`
         }).catch(error => {
+
+
             console.log(error);
 
       }).then(
