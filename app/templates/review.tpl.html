@@ -7,17 +7,17 @@
     <div class="description">{{info.overview}}</div>
   </div>
   <div class="align-center">
-     <img class="review-pic inline" ng-src="{{myReviews[0].User.profileUrl}}">
-     <div class="review-title inline">{{myReviews[0].User.userName}}'s Review</div>
+    <a href=#!/profile-page/{{myReviews[0].User.id}}> <img class="review-pic inline" ng-src="{{myReviews[0].User.profileUrl}}"></a>
+     <a href=#!/profile-page/{{myReviews[0].User.id}} class="review-title inline">Review by {{myReviews[0].User.userName}}</a>
   </div>
 
-  <div class="ind-review-box" ng-repeat="review in myReviews">
+  <!-- <div class="ind-review-box" ng-repeat="review in myReviews">
      <div>{{myReviews[0].User.userName}} gives this show {{review.ranking}} stars. Here is his review:</div>
      <div class="inline ind-review-text">{{review.review}}</div>
      <div class="inline ind-review-comment" ng-click="makeComment(review)">Comment on this review</div>
      <div class="comment-box">Comments on this review:</div>
      <div ng-repeat="comment in review.Comments | orderBy:'-'">{{comment.comment}}</div>
-  </div>
+  </div> -->
 
 
 <div class="modal" ng-class="modalToggle">
@@ -31,7 +31,7 @@
        <div class="field">
          <label class="label">Write your comment.</label>
          <p class="control">
-           <textarea class="textarea" placeholder="Write a super comment here!" ng-model="text.comment"></textarea>
+           <textarea class="textarea" placeholder="Write a comment here!" ng-model="text.comment"></textarea>
          </p>
        </div>
 
@@ -53,35 +53,38 @@
 
 <article class="media user-review" ng-repeat="review in myReviews">
   <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="{{review.User.profileUrl}}">
-    </p>
+    <!-- <p class="image is-128x128 review-profile-container"> -->
+      <!-- <img class="review-profile" src="{{review.User.profileUrl}} "> -->
+    <!-- </p> -->
   </figure>
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>{{review.User.userName}}</strong>
+        <!-- <strong>{{review.User.userName}}</strong> -->
         <br>
-        {{review.review}}
+        <p class="single-review">{{review.review}}</p>
         <br>
-        <small><a>Like</a> · <a>Comment</a> · 3 hrs</small>
+        <small class="review-comment"><a ng-click="makeComment(review)">Comment</a> · 3 hrs</small>
       </p>
     </div>
 
-    <article class="media">
+
+    <article class="media" ng-repeat="comment in review.Comments | orderBy:'-' ">
       <figure class="media-left">
-        <p class="image is-48x48">
-          <img src="http://bulma.io/images/placeholders/96x96.png">
+        <p class=" review-profile-container">
+          <a href="#!/profile-page/{{comment.id}}"><img class="review-profile" ng-src="{{comment.profileUrl}}"></a>
+          <h1 class="comment-username">{{comment.userName}}</h1>
         </p>
       </figure>
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{review.Comments}}</strong>
+          <strong class="comment">{{comment.comment}}</strong>
             <br>
-            <p ng-repeat="comment in review.Comments | orderBy:'-'">{{comment.comment}}</p>
+            <!-- <p>{{review.Comments.comment}}</p> -->
+            <!-- <p ng-repeat="comment in review.Comments | orderBy:'-'">{{comment.comment}}</p> -->
             <br>
-            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+            <small class="reply-link"><a ng-click="makeComment(review)">Reply</a> · 2 hrs</small>
           </p>
         </div>
 

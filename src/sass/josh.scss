@@ -154,6 +154,10 @@ div.description{
   color: #99AABB;
 }
 
+.review-title:hover{
+  color: #99CCFF;
+}
+
 .ind-review-box {
   border: 1px solid #99AABB;
 }
@@ -188,7 +192,11 @@ div.ng-binding{
 }
 
 .review-pic {
+  height: 50px;
   width: 50px;
+  border-radius: 50%;
+  margin-right: 2%;
+
 }
 
 .align-center{
