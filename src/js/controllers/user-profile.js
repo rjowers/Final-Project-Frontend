@@ -15,7 +15,16 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
       console.log(resp.data)
       $scope.profileUrl = resp.data[0].User.profileUrl;
       console.log($scope.profileUrl);
-      //
+
+      //try to make stars
+      for(var count = 0; count < $scope.UserReviews.length; count++){
+        console.log($scope.UserReviews[count].ranking)
+        var length = $scope.UserReviews[count].ranking;
+        $scope.UserReviews[count].ranking = [];
+        for(var count2 = 0; count2 < length; count2++){
+          $scope.UserReviews[count].ranking.push(count2);
+        }
+      }
     });
   }
 
