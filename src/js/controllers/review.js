@@ -19,7 +19,7 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.myReviews.push(resp.data[count]);
-        console.log($scope.myReviews)
+        //console.log($scope.myReviews)
           // console.log($scope.myReviews[0].id)
       }
     }
@@ -42,11 +42,25 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     //console.log(data)
     //console.log(AccountService.token());
 
-    $http.post(`${SERVER}/comments`, data, {
-      headers: AccountService.token()
-    }).then(resp => {
-      console.log(resp);
-    });
+    //console.log($scope.myReviews, "heres data for our function")
+    //data.profileUrl = $scope.myReviews
+    // data.userName =
+    $http.get(`${SERVER}/users/${$stateParams.user}`).then(resp => {
+      console.log(resp.data[0].userName)
+      console.log(resp.data[0].profileUrl)
+      data.userName = resp.data[0].userName
+      data.profileUrl = resp.data[0].profileUrl
+      console.log(data)
+
+      $http.post(`${SERVER}/comments`, data, {
+        headers: AccountService.token()
+      }).then(resp => {
+        console.log(resp);
+      });
+
+    })
+
+
 
     $scope.modalToggle = ""
 
