@@ -9,16 +9,16 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
     $http.get(`${SERVER}/userreviews/${$stateParams.userId}`).then(resp => {
       $http.get(`${SERVER}/users/${$stateParams.userId}`).then(resp => {
         $scope.user = resp.data;
-        console.log(resp.data)
+        //console.log(resp.data)
       })
       $scope.UserReviews = resp.data;
-      console.log(resp.data)
+      //console.log(resp.data)
       $scope.profileUrl = resp.data[0].User.profileUrl;
-      console.log($scope.profileUrl);
+      //console.log($scope.profileUrl);
 
       //try to make stars
       for(var count = 0; count < $scope.UserReviews.length; count++){
-        console.log($scope.UserReviews[count].ranking)
+        //console.log($scope.UserReviews[count].ranking)
         var length = $scope.UserReviews[count].ranking;
         $scope.UserReviews[count].ranking = [];
         for(var count2 = 0; count2 < length; count2++){
@@ -84,13 +84,13 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
 
   $http.get(`${SERVER}/followers/${$stateParams.userId}`).then(resp => {
         $scope.GetFollowers = resp.data;
-        console.log(resp.data)
+        //console.log(resp.data)
 
       });
 
   $http.get(`${SERVER}/following/${$stateParams.userId}`).then(resp => {
         $scope.GetFollowing = resp.data;
-        console.log(resp.data)
+        //console.log(resp.data)
           });
 
 
@@ -126,8 +126,13 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
           //         console.log(error);
           //   })
 
+       getNews();
+       setInterval(getNews, 15000);
 
+       //function test () {console.log("test")}
 
+       function getNews () {
+          console.log("begining of get news")
           //first get a list of all the ppl you are following useing this route => /following/:userId'
           $http.get(`${SERVER}/following/${$stateParams.userId}`).then(resp => {
               for(var count = 0; count < resp.data.length; count++){
@@ -210,14 +215,14 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
                         $scope.news[count2].Relationship.followedId = $scope.news[count2].Review.showName;
                       }
                       //console.log(count2)
-                      console.log($scope.news)
+                      //console.log($scope.news)
                     }
                   }
                 });
               }
 
           });
-
+        } ////end of news function
 
 }
 

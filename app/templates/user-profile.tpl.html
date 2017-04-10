@@ -90,7 +90,8 @@
     <header class="modal-card-head news-feed-head">
         <p class="modal-card-title">Recent Activity</p>
     </header>
-      <div ng-repeat="item in news">
+
+      <div ng-repeat="item in news | orderBy:'-' ">
         <div><p class ="activity">
            <a href="#!/profile-page/{{item.User.id}}">
              <img class="news-image" ng-src="{{item.User.profileUrl}}">
@@ -203,7 +204,7 @@
         <header class="modal-card-head news-feed-head">
             <p class="modal-card-title">Recent Activity</p>
         </header>
-          <div ng-repeat="item in news">
+          <div ng-repeat="item in news | orderBy:'-' ">
             <div><p class ="activity">  <img class="news-image" ng-src="{{item.User.profileUrl}}">{{item.User.userName}} {{item.newsType}} {{item.Relationship.followedId}} at {{item.createdAt}}</p></div>
             <br>
             <hr>

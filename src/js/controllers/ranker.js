@@ -121,6 +121,7 @@ $scope.chooseShow = function (show){
     console.log(data)
     AccountService.updateRankings(data, $stateParams.userId).then(resp => {
        console.log(resp)
+       $window.location.reload();
     })
     .catch(error => {
     console.log(error);
@@ -145,6 +146,7 @@ $scope.chooseShow = function (show){
     console.log(data)
     AccountService.updateRankings(data, $stateParams.userId).then(resp => {
        console.log(resp)
+       $window.location.reload();
     })
     .catch(error => {
     console.log(error);
@@ -166,6 +168,7 @@ $scope.chooseShow = function (show){
     console.log(data)
     AccountService.updateRankings(data, $stateParams.userId).then(resp => {
        console.log(resp)
+       $window.location.reload();
     })
     .catch(error => {
     console.log(error);
