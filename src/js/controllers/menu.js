@@ -31,7 +31,7 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
   AccountService.me()
     .then(resp => {
-      console.log(resp.data.id)
+      //console.log(resp.data.id)
       $scope.userId = resp.data.id
       //console.log($scope.userId);
       $http.get(`${SERVER}/userreviews/${$scope.userId}`).then(resp => {
