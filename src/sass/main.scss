@@ -548,6 +548,9 @@ height: 100px;
 width:100px;
 }
 
+
+
+
 .follower-image{
 border-radius: 50%;
 // height: 50px;
@@ -821,8 +824,55 @@ margin-top: 300px;
 
 ///////////Single Review Page///////
 
+.single-review{
+  // text-align: center;
+  font-size: 24px;
+  color: #6FA5BB;
+  margin-left: 4.5%
+}
+.comment{
+  color: #6FA5BB;
+}
 
+.review-profile{
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
 
+.review-profile-container{
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.review-profile:hover{
+  border: 2px solid #72d147;
+
+}
+
+.media{
+  margin-left: 4.5%;
+  margin-right: 4.5%;
+}
+
+.review-comment{
+  margin-left: 4.5%;
+  a{
+      color: white;
+  }
+}
+
+.reply-link{
+  a{
+    color:white;
+  }
+}
+
+.comment-username{
+  // padding-left: 20%
+  text-align: center;
+}
 
 
 
