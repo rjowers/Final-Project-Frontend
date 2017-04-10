@@ -17,10 +17,11 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     console.log(listArray);
      // array of strings => array of promises => array of ShowData by waiting
     var showData = Promise.all(listArray.map(searchShow));
-    showData.then(data => { $scope.myList = data; })
+    showData.then(data => { $scope.myList = data; $scope.$apply(); })
     // for(var count = 0; count < listArray.length; count++){
     //   searchShow(listArray[count])
     // }
+    //$scope.$apply();
   });
 
   function searchShow (input) {

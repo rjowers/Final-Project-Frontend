@@ -183,7 +183,7 @@
           <img class="userpage-reviewimage" ng-src="http://image.tmdb.org/t/p/w130/{{review.posterPath}}" alt="no image">
         <a href="#!/review/{{review.showId}}/{{review.userId}}">
           <div class="userpage-reviewtext-title">
-          <p class="title">{{review.showName}} {{review.ranking}}<img class="star" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png">
+          <p class="title">{{review.showName}}<div class="inline" ng-repeat="star in review.ranking"><img class="star" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png"></div>
           <p>
 
             <p class="userpage-reviewtext">{{review.review}}</p>

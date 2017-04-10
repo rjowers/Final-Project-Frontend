@@ -25,10 +25,13 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     // console.log($rootScope.shows)
   }
 
+  $scope.goRanker = function(){
+    $window.location.href = `#!/ranker/${$scope.userId}`
+  }
 
   AccountService.me()
     .then(resp => {
-      //console.log(resp.data.id)
+      console.log(resp.data.id)
       $scope.userId = resp.data.id
       //console.log($scope.userId);
       $http.get(`${SERVER}/userreviews/${$scope.userId}`).then(resp => {
