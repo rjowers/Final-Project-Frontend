@@ -50,6 +50,7 @@ function menuController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
     $cookies.remove('access-token');
     $cookies.remove('userId');
     $rootScope.loggedIn = false;
+    $window.location.reload();
   }
 };
 

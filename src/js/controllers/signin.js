@@ -1,4 +1,4 @@
-function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService) {
+function signInController ($scope, $http, SERVER, $state, $cookies, $rootScope, AccountService, $window) {
   // console.log($cookies);
 
 $scope.signIn = (user) => {
@@ -14,12 +14,13 @@ AccountService.login(user).then(resp => {
       $cookies.put('access-token', resp.data.token);
       // $cookies.put('user-id', resp.data.user.id);
       // $http.defaults.headers.common['access-token'] = resp.data.token;
-      $state.go('home');
+      $window.location.reload();
+      $window.location.href = '#!/home';
     }).catch(error => {
         console.log(error);
     });
   };
 };
 
-signInController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService']
+signInController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$window']
   export default signInController;
