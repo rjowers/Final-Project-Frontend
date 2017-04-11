@@ -71,7 +71,11 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
 
 
   $scope.modal = function (){
-    $scope.modalToggle = "is-active";
+    if(!$rootScope.loggedIn){
+      alert("You have to be logged in to review a show")
+    }else{
+      $scope.modalToggle = "is-active";
+    }
   }
 
   $scope.close = function (){
@@ -106,10 +110,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
         //$scope.test2.unshift(resp.data);  //$window.location.href = `#!/show/${results.id}`
         $window.location.reload();
         }).catch(error => {
-
-
             console.log(error);
-
       }).then(
 
       // $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
