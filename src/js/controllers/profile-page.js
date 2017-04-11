@@ -1,4 +1,4 @@
-function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootScope, $stateParams, AccountService) {
+function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootScope, $stateParams, AccountService, $window) {
 
   $http.get(`${SERVER}/userreviews/${$stateParams.user}`).then(resp => {
     for(var count = 0; count < resp.data.length; count++){
@@ -31,12 +31,9 @@ var data ={};
       headers: AccountService.token()
       }).then(resp => {
       console.log(resp);
-      $cookies.followed = true;
-
-      if ($cookies.followed = true) {
-        $rootScope.followed = true;
-      }
-
+      $cookies.put('followed', true);
+      $rootScope.followed = true;
+      $window.location.reload()
   });
 };
 
@@ -44,11 +41,8 @@ $scope.unfollow = function () {
   $http.delete(`${SERVER}/deletefollowing/${$stateParams.user}`,{
     headers: AccountService.token()
   }).then(resp => {
-    $cookies.unfollowed = true;
-
-    if ($cookies.unfollowed = true) {
-      $rootScope.unfollowed = true;
-    }
+    $cookies.put('followed', false);
+    $rootScope.followed = true;
   });
 };
 
@@ -151,6 +145,6 @@ $scope.unfollow = function () {
 
 }
 
-ProfilePageController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', '$stateParams', 'AccountService'];
+ProfilePageController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', '$stateParams', 'AccountService', '$window'];
 
 export default ProfilePageController;
