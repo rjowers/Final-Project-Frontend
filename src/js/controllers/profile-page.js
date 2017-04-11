@@ -31,7 +31,7 @@ var data ={};
       headers: AccountService.token()
       }).then(resp => {
       console.log(resp);
-      $cookies.put('followed', true);
+      //$cookies.put('followed', true);
       $rootScope.followed = true;
       $window.location.reload()
   });
@@ -41,21 +41,33 @@ $scope.unfollow = function () {
   $http.delete(`${SERVER}/deletefollowing/${$stateParams.user}`,{
     headers: AccountService.token()
   }).then(resp => {
-    $cookies.put('followed', false);
+    //$cookies.put('followed', false);
+    console.log("hey ho")
     $rootScope.followed = true;
+    $window.location.reload()
   });
 };
 
 
   $http.get(`${SERVER}/followers/${$stateParams.user}`).then(resp => {
         $scope.GetFollowers = resp.data;
-        console.log(resp.data)
-
+        console.log($scope.GetFollowers, "carl's followers" )
+        //console.log(AccountService.me(), "our info person who is logged in")
+        AccountService.me().then(resp => {
+          console.log(resp.data, "Our info")
+          for(var count = 0; count < $scope.GetFollowers.length; count++){
+            if($scope.GetFollowers[count].followerId === resp.data.id){
+              $rootScope.followed = true
+            }
+          }
+          $rootScope.currentUser = resp.data.id
+        });
       });
 
   $http.get(`${SERVER}/following/${$stateParams.user}`).then(resp => {
         $scope.GetFollowing = resp.data;
         console.log(resp.data)
+
           });
 
 
