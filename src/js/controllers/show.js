@@ -13,6 +13,7 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
       // console.log(resp.data)
       // console.log(myData)
       // myData.muff = 0;
+
     });
   }
 
@@ -49,6 +50,15 @@ function ShowController ($scope, $http, SERVER, $state, $cookies, $rootScope, Ac
   $http.get(`${SERVER}/showreviews/${$stateParams.showId}`).then(resp => {
       console.log(resp.data, "init data")
       $scope.test2 = resp.data;
+      //////////////////////////////////////////////
+      for(var count = 0; count < $scope.test2.length; count++){
+        //console.log($scope.UserReviews[count].ranking)
+        var length = $scope.test2[count].ranking;
+        $scope.test2[count].ranking = [];
+        for(var count2 = 0; count2 < length; count2++){
+          $scope.test2[count].ranking.push(count2);
+        }
+      }
     });
 
   // $http.get(`${SERVER}/showreviews/${$cookies.get('clickedPhoto')}`).then(resp => {
