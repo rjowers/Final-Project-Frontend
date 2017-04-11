@@ -4,6 +4,17 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.GetReviews = resp.data;
+      ////////////////////////////////////////// set up stars
+      for(var count = 0; count < $scope.GetReviews.length; count++){
+        //console.log($scope.UserReviews[count].ranking)
+        var length = $scope.GetReviews[count].ranking;
+        $scope.GetReviews[count].ranking = [];
+        for(var count2 = 0; count2 < length; count2++){
+          $scope.GetReviews[count].ranking.push(count2);
+        }
+      }
+
+
         console.log(resp.data)
       }
     }
