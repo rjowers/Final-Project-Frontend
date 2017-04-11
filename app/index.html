@@ -28,17 +28,17 @@
         <span></span>
       </span>
       <div class="nav-right" ng-controller="menuController">
-        <a class="nav-item is-tab is-hidden-mobile is-active" ng-click="goRanker()">Create your list</a>
+        <a class="nav-item is-tab is-hidden-mobile is-active" ng-click="goRanker()" ng-show="loggedIn">Create your list</a>
 
 
-        <a class="nav-item is-tab " href="#!/user-profile/{{userId}}">
+        <a class="nav-item is-tab " href="#!/user-profile/{{userId}}" ng-show="loggedIn">
 
           <figure class="image is-16x16" style="margin-right: 8px;">
             <img class="small-profilepic" ng-src="{{user[0].User.profileUrl}}">
           </figure>
           Profile
         </a>
-        <a class="nav-item is-tab" href="#!/sign-up">Sign Up</a>
+        <a class="nav-item is-tab" href="#!/sign-up" ng-show="!loggedIn">Sign Up</a>
         <a class="nav-item is-tab" href="#!/sign-in" ng-show="!loggedIn">Sign In</a>
         <a class="nav-item is-tab" href="#" ng-click="logout()" ng-show="loggedIn">Log Out</a>
         <div>
