@@ -4,7 +4,7 @@ function ProfilePageController ($scope, $http, SERVER, $state, $cookies, $rootSc
     for(var count = 0; count < resp.data.length; count++){
       if(resp.data[count].User.id == $stateParams.user){
         $scope.GetReviews = resp.data;
-        // console.log(resp.data)
+        console.log(resp.data)
       }
     }
 
