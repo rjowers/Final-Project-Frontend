@@ -11,13 +11,27 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
 
 
   $http.get(`${SERVER}/getRankings/${$stateParams.userId}`).then(resp => {
-    console.log(resp.data[0].rankings)
-    testString = resp.data[0].rankings;
-    listArray = testString.split(",");
-    console.log(listArray);
-     // array of strings => array of promises => array of ShowData by waiting
-    var showData = Promise.all(listArray.map(searchShow));
-    showData.then(data => { $scope.myList = data; $scope.$apply(); })
+    if(!resp.data[0]){   //if they don't have a list yet create on for them
+      testString = "";
+      var data = {
+        listId: 1,
+        rankings: ""
+      }
+      $http.post(`${SERVER}/rankings/${$stateParams.userId}`, data, {
+        headers: AccountService.token()
+      }).then(resp => {
+        //console.log("newlist")
+      });
+    }else{
+      testString = resp.data[0].rankings;
+      //console.log("hy")
+
+      listArray = testString.split(",");
+      //console.log(listArray);
+       // array of strings => array of promises => array of ShowData by waiting
+      var showData = Promise.all(listArray.map(searchShow));
+      showData.then(data => { $scope.myList = data; $scope.$apply(); })
+    }
     // for(var count = 0; count < listArray.length; count++){
     //   searchShow(listArray[count])
     // }
