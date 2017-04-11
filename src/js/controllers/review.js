@@ -29,6 +29,7 @@ function ReviewController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
 $http.get(`${SERVER}/comments/${$stateParams.id}`).then(resp => {
   // console.log(resp.data);
   $scope.Comments = resp.data;
+  console.log($scope.Comments, "this is your comments info")
 
 })
   //console.log($scope.myReviews.id)
