@@ -339,6 +339,9 @@ img.landing {
   height: 350px;
   width: 100%;
   object-fit: cover;
+  color: white;
+  text-align: center;
+  font-size: 30px;
 
 
 
@@ -427,8 +430,8 @@ margin-right: 25%;
   height: 250px;
   width: 250px;
   display: inline-block;
-margin-left: 8%;
-bottom: 180px;
+  margin-left: 8%;
+  bottom: 180px;
 
 object{
   border-radius: 45%;
@@ -456,7 +459,10 @@ object{
 img.profile-pic{
   height: 200px;
   width: 200px;
+  // background-color:blue;
 }
+
+
 
 .profile-pic {
   // display: flex;
@@ -595,14 +601,25 @@ img.image-main.follower-image{
 
 .addphoto{
   position: relative;
-  bottom: 315px;
-  left: 190px;
+  bottom: 280px;
+  left: 10.8%;
   color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
 .addphoto:hover{
   text-decoration: underline;
   color: white;
+}
+
+.addphoto:focus{
+  outline: none;
 }
 
 .addprofile {
