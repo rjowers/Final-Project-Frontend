@@ -66,7 +66,7 @@
     <!-- <a href="#!/review/{{review.showId}}/{{review.User.id}}"> -->
       <div class="inline review-text">
         <div class="review-info"><a class="review-info-link" href="#!/review/{{review.showId}}/{{review.User.id}}">{{review.User.userName}}'s review </a>
-            <div>{{review.ranking}} stars</div>
+            <div class="inline" ng-repeat="star in review.ranking"><img class="star inline" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png"></div>
         </div>
         <div class="inline review-text">{{review.review}} </div>    <a class="more" href="#!/review/{{review.showId}}/{{review.User.id}}">...More</a>
 
