@@ -51,10 +51,10 @@ $scope.unfollow = function () {
 
   $http.get(`${SERVER}/followers/${$stateParams.user}`).then(resp => {
         $scope.GetFollowers = resp.data;
-        console.log($scope.GetFollowers, "carl's followers" )
+        //console.log($scope.GetFollowers, "carl's followers" )
         //console.log(AccountService.me(), "our info person who is logged in")
         AccountService.me().then(resp => {
-          console.log(resp.data, "Our info")
+          //console.log(resp.data, "Our info")
           for(var count = 0; count < $scope.GetFollowers.length; count++){
             if($scope.GetFollowers[count].followerId === resp.data.id){
               $rootScope.followed = true
@@ -66,9 +66,8 @@ $scope.unfollow = function () {
 
   $http.get(`${SERVER}/following/${$stateParams.user}`).then(resp => {
         $scope.GetFollowing = resp.data;
-        console.log(resp.data)
-
-          });
+        //console.log(resp.data)
+  });
 
 
           $scope.modal = function (){
