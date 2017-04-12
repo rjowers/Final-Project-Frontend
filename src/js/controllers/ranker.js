@@ -13,6 +13,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   $http.get(`${SERVER}/getRankings/${$stateParams.userId}`).then(resp => {
     if(!resp.data[0]){   //if they don't have a list yet create on for them
       testString = "";
+      console.log("in default")
       var data = {
         listId: 1,
         rankings: ""
@@ -39,6 +40,10 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
   });
 
   function searchShow (input) {
+    console.log(input)
+    if(!input){
+      return null;
+    }
     return $http.get(`https://api.themoviedb.org/3/tv/${input}?api_key=${token}&language=en-US`).then(resp => {
       return resp.data;
 //      console.log(resp.data, "here's my show");

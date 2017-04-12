@@ -72,7 +72,7 @@
     <article class="media" ng-repeat="comment in review.Comments | orderBy:'-' ">
       <figure class="media-left">
         <p class=" review-profile-container">
-          <a href="#!/profile-page/{{review.User.id}}"><img class="review-profile" ng-src="{{comment.profileUrl}}"></a>
+          <a href="#!/profile-page/{{comment.id}}"><img class="review-profile" ng-src="{{comment.profileUrl}}"></a>
           <h1 class="comment-username">{{comment.userName}}</h1>
         </p>
       </figure>
