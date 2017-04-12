@@ -63,13 +63,13 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-var firstShowPage = getRandomInt(0, 50)
+var firstShowPage = getRandomInt(0, 3)
 var firstShowShow = getRandomInt(0, 19)
-var secondShowPage = getRandomInt(0, 50)
+var secondShowPage = getRandomInt(0, 3)
 var secondShowShow = getRandomInt(0, 19)
 
 while(firstShowPage === secondShowPage && firstShowShow === secondShowShow){
-  secondShowPage = getRandomInt(0, 50)
+  secondShowPage = getRandomInt(0, 3)
   secondShowShow = getRandomInt(0, 19)
 }
 
