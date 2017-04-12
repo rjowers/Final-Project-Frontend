@@ -36,13 +36,13 @@
       <div class="field">
         <label class="label">Write your review.</label>
         <p class="control">
-          <textarea class="textarea" placeholder="Write a super review here!" ng-model="review.text"></textarea>
+          <textarea class="textarea" placeholder="Write a review here" ng-model="review.text"></textarea>
         </p>
       </div>
 
       <div class="field is-grouped">
         <p class="control">
-          <button class="button is-primary" ng-submit="addReview()">Submit</button>
+          <button class="button is-primary add-review-button" ng-submit="addReview()">Submit</button>
         </p>
       </div>
     </form>
@@ -57,7 +57,7 @@
 </div>
 
 
-<div class="show-reviews">Reviews
+<div class="show-reviews"><h1 class="review-header">Reviews</h1>
 
   <div ng-repeat="review in test2" class="review-box">
     <a href="#!/profile-page/{{review.User.id}}">

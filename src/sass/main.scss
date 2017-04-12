@@ -17,6 +17,13 @@ html{
 
 }
 
+.search:focus{
+  outline: none;
+}
+
+search ng-pristine ng-valid ng-empty ng-touched:focus{
+  outline: none;
+}
 .ShowRanker{
   font-size: 24px;
   color: #c61017;
@@ -305,7 +312,7 @@ min-height: 100%;
   height: 226px;
   width: 149px;
   margin-top: 25px;
-  bottom: 330px;
+  bottom: 315px;
     -webkit-animation-fill-mode: forwards;
   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
@@ -544,6 +551,11 @@ background-color:  #c61017;
   font-size: 30px;
   position: relative;
   bottom: 15px;
+  color: white;
+  font-family: 'Bevan', cursive;
+
+
+
 }
 .review{
   width: 936px;
@@ -686,6 +698,8 @@ input{
   color: #99AABB;
   font-size: 40px;
   text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
 
 }
 
@@ -711,6 +725,7 @@ input{
 .userpage-reviewtext-title{
   display: inline-block;
   vertical-align: top;
+  // float: right;
 
 .title{
   font-size: 24px;
@@ -729,7 +744,12 @@ input{
   display: inline-block;
   vertical-align: top;
   color: #99AABB;
-
+  position: absolute;
+  overflow: hidden;
+  height: 197px;
+  width: 870px;
+  text-align: justify;
+  text-justify: inter-word;
 
   // width: 94%;
   // font-size: 16px;
@@ -870,6 +890,7 @@ margin-top: 300px;
   font-size: 50px;
   text-align: center;
   color: white;
+  font-family: 'Bevan', cursive;
 }
 
 .search-images{
@@ -884,11 +905,15 @@ margin-top: 300px;
 .single-review{
   // text-align: center;
   font-size: 24px;
-  color: #6FA5BB;
-  margin-left: 4.5%
+  color: #99AABB;
+  margin-left: 4.5%;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .comment{
-  color: #6FA5BB;
+  color: #99AABB;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .review-profile{
@@ -1002,5 +1027,34 @@ a{
 a:hover{
   color: #c61017;
 }
+
+}
+
+
+
+
+//////////Misc/////////
+
+.add-review-button{
+  color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+  font-size: 20px;
+}
+
+.button.is-primary {
+  color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+  font-size: 20px;
+  }
+
+
+.label{
+  color: white;
 
 }
