@@ -954,6 +954,7 @@ margin-top: 300px;
 .comment-username{
   // padding-left: 20%
   text-align: center;
+  color: white;
 }
 
 
@@ -1056,5 +1057,14 @@ a:hover{
 
 .label{
   color: white;
+
+}
+
+a.review-info-link:hover {
+color: #9cf;
+}
+
+.show-list{
+  color: #99AABB;
 
 }
