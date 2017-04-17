@@ -11,7 +11,7 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
 
 
   $http.get(`${SERVER}/getRankings/${$stateParams.userId}`).then(resp => {
-    if(!resp.data[0]){   //if they don't have a list yet create on for them
+    if(!resp.data[0]){   //if they don't have a list yet create one for them
       testString = "";
       console.log("in default")
       var data = {
@@ -28,6 +28,12 @@ function rankerController ($scope, $http, SERVER, $state, $cookies, $rootScope, 
       //console.log("hy")
 
       listArray = testString.split(",");
+
+      for(var i = listArray.length - 1; i >= 0; i--) {
+      if(listArray[i] === "") {
+         listArray.splice(i, 1);
+        }
+      }
       //console.log(listArray);
        // array of strings => array of promises => array of ShowData by waiting
       var showData = Promise.all(listArray.map(searchShow));

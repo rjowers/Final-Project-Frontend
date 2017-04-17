@@ -127,7 +127,7 @@ function UserProfileController ($cookies, $scope, $http, SERVER, $state, $stateP
           //   })
 
        getNews();
-       setInterval(getNews, 15000);
+       //setInterval(getNews, 15000);
 
        //function test () {console.log("test")}
 
