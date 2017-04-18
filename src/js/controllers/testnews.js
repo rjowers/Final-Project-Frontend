@@ -89,7 +89,7 @@ function testNewsController ($scope, $http, SERVER, $state, $cookies, $rootScope
               if($scope.news[count2].newsType === "comment"){
                 $scope.news[count2].newsType = "commented"
                 $scope.news[count2].Relationship = {};
-                $scope.news[count2].Relationship.followedId = "a review";
+                $scope.news[count2].Relationship.followedId = "on a review";
               }
               if($scope.news[count2].newsType === "review"){
                 $scope.news[count2].newsType = "reviewed"

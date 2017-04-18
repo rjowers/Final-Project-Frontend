@@ -3,7 +3,9 @@
   <div class="show-list" ng-repeat="show in myList">{{$index + 1}}.{{show.name}}</div>
 </div>
 <div class="user-choice">
+
     <div class="title-two-shows">Choose the One That You Like Better</div>
+     <a ng-click="neither()" class="button neither-button">Neither?</a>
     <div class="inline two-shows" ng-repeat="choice in myChoice">
       <img class="show-choices" ng-click="chooseShow(choice)" ng-src="http://image.tmdb.org/t/p/w130{{choice.poster_path}}"/>
       <p class="overview">{{choice.overview}}</p>
