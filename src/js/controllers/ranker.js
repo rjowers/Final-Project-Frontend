@@ -201,6 +201,11 @@ $scope.chooseShow = function (show){
   }
 }
 
+$scope.neither = function reload (){
+  $window.location.reload();
+
+}
+
 };
 
 rankerController.$inject = ['$scope', '$http', 'SERVER', '$state', '$cookies', '$rootScope', 'AccountService', '$stateParams', '$window']

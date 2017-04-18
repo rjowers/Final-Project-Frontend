@@ -99,7 +99,7 @@
            {{item.User.userName}}
            {{item.newsType}}
            {{item.Relationship.followedId}}
-           at {{item.createdAt}}
+           <!-- at {{item.createdAt}} -->
           </p>
         </div>
         <br>
@@ -205,7 +205,8 @@
             <p class="modal-card-title">Recent Activity</p>
         </header>
           <div ng-repeat="item in news | orderBy:'-' ">
-            <div><p class ="activity">  <img class="news-image" ng-src="{{item.User.profileUrl}}">{{item.User.userName}} {{item.newsType}} {{item.Relationship.followedId}} at {{item.createdAt}}</p></div>
+            <div><p class ="activity">  <img class="news-image" ng-src="{{item.User.profileUrl}}">{{item.User.userName}} {{item.newsType}} {{item.Relationship.followedId}} </p></div>
+            <!-- at {{item.createdAt}}  add this for time of comment-->
             <br>
             <hr>
         </div>

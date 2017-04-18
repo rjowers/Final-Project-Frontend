@@ -1,6 +1,11 @@
 @import "bulma";
 @import "josh";
 
+p{
+  font-family: 'Open Sans', sans-serif;
+
+}
+
 html{
   background-color: #151515;
   // background-color: #222222;
@@ -14,6 +19,8 @@ html{
   margin-left: 12px;
   height: 30px;
   width: 200px;
+  font-family: 'Open Sans', sans-serif;
+
 
 }
 
@@ -35,6 +42,8 @@ search ng-pristine ng-valid ng-empty ng-touched:focus{
 .nav{
   // background-color: #2e2e2e;
   background-color: #222222;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .nav-item a, a.nav-item {
@@ -489,7 +498,7 @@ object{
   width: 200px;
   bottom: 186px;
   margin-left: 100px;
-  border-radius: 45%;
+  border-radius: 50%;
   border: solid 1px white;
 
 }
@@ -507,7 +516,7 @@ img.profile-pic{
   // align-self: center;
   height: 100px;
   width: 100px;
-  border-radius: 45%;
+  border-radius: 50%;
   border: solid 2px white;
   position: relative;
   bottom: 50px;
@@ -750,6 +759,8 @@ input{
   width: 870px;
   text-align: justify;
   text-justify: inter-word;
+  font-family: 'Open Sans', sans-serif;
+
 
   // width: 94%;
   // font-size: 16px;
@@ -828,12 +839,12 @@ border:  2px solid hsla(0,0%,100%,.25);
 }
 
 .news-feed{
-  width: 600px;
+  width: 500px;
   height: 200px;
   background-color: white;
   position: absolute;
   display: inline-block;
-  margin-left: 650px;
+  margin-left: 690px;
   bottom: 110px;
 
 .news-feed-head{

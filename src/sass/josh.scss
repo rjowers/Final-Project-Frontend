@@ -4,6 +4,11 @@
 //   border: 1px dotted red;
 // }
 
+p{
+  font-family: 'Open Sans', sans-serif;
+
+}
+
 .show-background {
   height: 480px;
   width: 80%;
@@ -44,6 +49,8 @@ div.description {
   color: #99AABB;
   text-align: justify;
   text-justify: inter-word;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .review-info-link {
@@ -154,6 +161,8 @@ font-family: 'Bevan', cursive;
   overflow: hidden;
   text-align: justify;
   text-justify: inter-word;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -264,7 +273,9 @@ div.inline.review-text.ng-binding{
 .user-list {
   width: 20%;
   vertical-align: top;
-  margin-left: 10%
+  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .title-top-shows {
@@ -303,6 +314,28 @@ div.inline.review-text.ng-binding{
   padding-left: 65px;
 }
 
+.neither-button{
+  position: absolute;
+  margin-left: 25%;
+  color: white;
+  background-color: #c61017;
+  border-color: #a50d13;  opacity: 1;
+  font-family: 'Arimo', sans-serif;
+  text-shadow: 0 0 20px black;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.neither-button:hover{
+  opacity: .9;
+  border: none;
+  color: white;
+}
+.neither-button:focus {
+  outline:0;
+}
+
 .show-choices{
   border: 1px solid #99AABB;
   margin-left: 15%;
@@ -320,4 +353,6 @@ text-align: justify;
     text-justify: inter-word;
     right: 20%;
     position: relative;
+    font-family: 'Open Sans', sans-serif;
+
  }
